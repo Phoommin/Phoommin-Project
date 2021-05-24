@@ -1,0 +1,98 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@Styles.Render("~/Content/StyleSheet1.css")
+@{
+    var jaMasterId = ViewBag.jaMasterId;
+    var Details = ViewBag.Details;
+    var Jad = ViewBag.JaDetails;
+}
+
+    <div>
+        <h2><b>รายละเอียดงาน</b></h2><br />
+
+        <table class="styled-table">
+            <tr>
+                <td bgcolor="#256080" style="color:#ffffff" width="40%">
+                    <label class="col-form-label">รายละเอียด</label>
+                </td>
+                <td bgcolor="#256080" style="color:#ffffff" width="30%">
+                    <label class="col-form-label">เป้าหมาย</label>
+                </td>
+                <td bgcolor="#256080" style="color:#ffffff" width="20%">
+                    <label class="col-form-label">ผู้ร่วมงาน</label>
+                </td>
+                <td bgcolor="#256080" style="color:#ffffff" width="10%">
+                    <label class="col-form-label">น้ำหนัก</label>
+                </td>
+            </tr>  
+            
+            <tr>
+                <td>@Details.Key.descriptionKey</td>
+                <td>@Details.Key.goal</td>
+                <td>@Details.employees.TitleTH@Details.employees.FirstNameTH &nbsp;@Details.employees.LastNameTH</td>
+                <td><input type="text" style="width:70px" disabled value="@Details.Key.weight" /></td>
+            </tr>
+        </table>
+
+        <br />
+        <h2><b>แสดงความคิดเห็น (Comments)</b></h2><br />
+        @using (Html.BeginForm("JAForManagerComment", "JobAssignment", new { id = Details.Key.id, jaId = Jad.jdId, type = ViewBag.Type, EmpId = Jad.empId }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <table class="styled-table-1">
+                <tr>
+                    <td align="right" bgcolor="#256080" style="color:#ffffff" width="10%">
+                        <label class="col-form-label">รายละเอียด:</label>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;
+                        <textarea name="taCommentDetails" id="taCommentDetails" style="width:100%;height:150px" required></textarea>
+                        <br /><br />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td bgcolor="#256080" style="color:#ffffff">
+                    </td>
+                    <td align="right">
+                        <div>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="history.go(-1); return false;" href="#">Cancel</button>
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        }
+
+        <br />
+        <h2><b>ประวัติ: </b></h2><br />
+                                 <table class="styled-table-1">
+                                     <tr>
+                                         <td bgcolor="#256080" style="color:#ffffff">
+                                             <label class="col-form-label">รายละเอียด</label>
+                                         </td>
+
+                                         <td bgcolor="#256080" style="color:#ffffff">
+                                             <label class="col-form-label">วันเวลา</label>
+                                         </td>
+
+                                     </tr>
+
+
+                                     @foreach (var K in ViewBag.History)
+                                     {
+                                         <tr>
+                                             <td>@K.commentDetails</td>
+                                             <td>@K.createdDate</td>
+                                         </tr>
+                                      }
+                            
+
+                                     </table>
+
+    </div>
+
+
+
+
+

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbbreviateEN" xml:space="preserve">
+    <value>Abbreviate</value>
+  </data>
+  <data name="AbbreviateTH" xml:space="preserve">
+    <value>Abbreviate in Thai</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AdmissionYear" xml:space="preserve">
+    <value>Admission year</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value> Back to List</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="CloseFullScreen" xml:space="preserve">
+    <value>Close Full Screen</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copy Right ©2019 Human Resources Information System</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>Countries</value>
+  </data>
+  <data name="Countries2Digit" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="CountriesCode" xml:space="preserve">
+    <value>Countries Code</value>
+  </data>
+  <data name="CountriesEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="CountriesTH" xml:space="preserve">
+    <value>Countrie name</value>
+  </data>
+  <data name="CreateBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value> Add New</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DelSure" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Departments" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="DepNameEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="DepNameTH" xml:space="preserve">
+    <value>Department name</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Districts" xml:space="preserve">
+    <value>Districts</value>
+  </data>
+  <data name="DistrictsEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="DistrictsTH" xml:space="preserve">
+    <value>District name</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value> Edit</value>
+  </data>
+  <data name="EditRoles" xml:space="preserve">
+    <value>Edit Roles</value>
+  </data>
+  <data name="Education" xml:space="preserve">
+    <value>Educational</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>FullScreen</value>
+  </data>
+  <data name="GPA" xml:space="preserve">
+    <value>GPA</value>
+  </data>
+  <data name="GraduationYear" xml:space="preserve">
+    <value>Graduation year</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HR" xml:space="preserve">
+    <value>Human Resources Information System</value>
+  </data>
+  <data name="Institution" xml:space="preserve">
+    <value>Institution</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Employee level</value>
+  </data>
+  <data name="LevelEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="ModifyBy" xml:space="preserve">
+    <value>Modified by</value>
+  </data>
+  <data name="ModifyDate" xml:space="preserve">
+    <value>Modified Date</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="PositionEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="Positions" xml:space="preserve">
+    <value>Positions</value>
+  </data>
+  <data name="PositionTH" xml:space="preserve">
+    <value>Position name</value>
+  </data>
+  <data name="PosUpright" xml:space="preserve">
+    <value>Chief Officer</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Edit User Profile</value>
+  </data>
+  <data name="ProvinceEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="Provinces" xml:space="preserve">
+    <value>Provinces</value>
+  </data>
+  <data name="ProvincesDel" xml:space="preserve">
+    <value>Delete province</value>
+  </data>
+  <data name="ProvincesDetails" xml:space="preserve">
+    <value>Province details</value>
+  </data>
+  <data name="ProvincesEdit" xml:space="preserve">
+    <value> Edit Province</value>
+  </data>
+  <data name="ProvinceTH" xml:space="preserve">
+    <value>Provinces name</value>
+  </data>
+  <data name="PWS" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value> Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelDep" xml:space="preserve">
+    <value>--Please select a Department--</value>
+  </data>
+  <data name="SelDistrict" xml:space="preserve">
+    <value>--Please select a District--</value>
+  </data>
+  <data name="SelPostion" xml:space="preserve">
+    <value>--Please select a Position--</value>
+  </data>
+  <data name="SelProvince" xml:space="preserve">
+    <value>--Please select a Province--</value>
+  </data>
+  <data name="Sequence" xml:space="preserve">
+    <value>Sequence</value>
+  </data>
+  <data name="SubDep" xml:space="preserve">
+    <value>Sub department</value>
+  </data>
+  <data name="Subdistricts" xml:space="preserve">
+    <value>Subdistricts</value>
+  </data>
+  <data name="SubdistrictsEN" xml:space="preserve">
+    <value>English name</value>
+  </data>
+  <data name="SubdistrictsTH" xml:space="preserve">
+    <value>Subdistrict name</value>
+  </data>
+  <data name="Subordinate" xml:space="preserve">
+    <value>Subordinate</value>
+  </data>
+  <data name="TitleEN" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Titles" xml:space="preserve">
+    <value>Titles</value>
+  </data>
+  <data name="TitleTH" xml:space="preserve">
+    <value>Title in Thai</value>
+  </data>
+  <data name="Upright" xml:space="preserve">
+    <value>Upright</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+</root>

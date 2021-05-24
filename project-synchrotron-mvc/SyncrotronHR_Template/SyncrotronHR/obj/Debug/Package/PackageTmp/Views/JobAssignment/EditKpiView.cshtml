@@ -1,0 +1,73 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@Styles.Render("~/Content/JA-JD.css")
+@{
+    var kpiId = ViewBag.kpi;
+    var edit = (JAMasterKPIDetail)ViewData["kpiListEdit"];
+}
+    <div>
+        <h2><b>แก้ไขตัวชี้วัด (KPI)</b></h2><br />
+        @using (Html.BeginForm("Edit_Kpi", "JobAssignment", new { id = kpiId }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+    <table >
+
+        <tr>
+            <td align="right">
+                <label class="col-form-label">รายละเอียด:</label>
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;
+                <textarea name="taKeyDetails" id="taKeyDetails" style="width:400px;height:68px" required readonly>
+                        @edit.KPIDescription
+                    </textarea>
+                <br /><br />
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                <label class="col-form-label">เป้าหมาย:</label>
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;
+                <textarea name="taKpiGoal" id="taKpiGoal" style="width:400px;height:68px" required>@edit.KPIGoal</textarea>
+                <br /><br />
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">
+                <label class="col-form-label">น้ำหนัก:</label>
+            </td>
+            <td>
+                &nbsp;&nbsp;&nbsp;
+                <input type="number" step="0.01" name="txtKpiWeight" id="txtKpiWeight" style="width:75px" value="@edit.KPIWeight" required />
+
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <br />
+                <br />
+            </td>
+            <td align="right">
+                <br />
+                <br />
+                <div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="history.go(-1); return false;" href="#">Cancel</button>
+                    <button type="submit" class="btn btn-primary">OK</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+        }
+    </div>
+
+
+
+

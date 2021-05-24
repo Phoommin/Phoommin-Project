@@ -1,0 +1,12 @@
+﻿/// <reference path="modernizr-2.8.3.js" />
+/// <reference path="jquery-3.5.1.js" />
+/// <autosync enabled="true" />
+/// <reference path="bootstrap.js" />
+/// <reference path="bootstrap.min - copy.js" />
+/// <reference path="custom.min.js" />
+/// <reference path="fastclick.js" />
+/// <reference path="jquery.min.js" />
+/// <reference path="jquery.validate.js" />
+/// <reference path="jquery.validate.unobtrusive.js" />
+/// <reference path="nprogress.js" />
+/// <reference path="respond.js" />

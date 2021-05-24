@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.7.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2459EB04-925D-4E97-9906-E2323B51D63F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SynchrotronHR</RootNamespace>
+    <AssemblyName>SynchrotronHR</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.4000\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.4000\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GridMvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GridMvc.dll.1.0.4\lib\net45\GridMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.stdformat, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobAssignmentController.cs" />
+    <Compile Include="Controllers\JobDescriptionController.cs" />
+    <Compile Include="Models\ContactType.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CrateJa.cs" />
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\District.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Division.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Education.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeContact.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeDep.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeEDU.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeFamily.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeLevel.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeePosition.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeType.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FingerScan.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FPLogReport.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Holiday.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hris.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hris.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hris.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hris.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hris.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRTimeLeave.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAComment.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAControl.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAManagerFlowApprove.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMaster.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMasterExtraDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMasterKeyResponsibilitiesDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMasterKPIDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMasterOtherActivitiesDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JAMasterSecondaryActivitiesDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JDClass.cs" />
+    <Compile Include="Models\JDMaster.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JDMasterEmp.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JDMasterSub.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KPI.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KPIJoin.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KPIReport.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KPIResponsible.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\masterKPIType.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\masterKPITypeSub.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\masterKPIYear.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\masterKPIYearControl.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\masterProject.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Overtime.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OvertimeDetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Position.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Province.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Subdistrict.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysFPStataion.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysUserCardRegister.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Title.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TransactionKPIDisplay.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserClaim.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLogin.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_JAManagerFlowApprove.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\View_ManagerViewJADetail.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Workplace.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Z_Departmant.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Z_EmpData.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Z_EmpEn.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Z_EmpTh.cs">
+      <DependentUpon>Hris.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReport1Test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1Test.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\GlobalRes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalRes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\GlobalRes.th.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalRes.th.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\home.Designer.cs">
+      <DependentUpon>home.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\home.th.Designer.cs">
+      <DependentUpon>home.th.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Languages.th.Designer.cs">
+      <DependentUpon>Languages.th.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Languages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Languages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\JobAgreementReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobAgreementReport.rpt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstraps.min.css" />
+    <Content Include="Content\custom.min.css" />
+    <Content Include="Content\flags.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Login2.css" />
+    <Content Include="Content\nprogress.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\Radio2.css" />
+    <Content Include="Content\StyleSheet1.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\Actions-appointment-new-icon.png" />
+    <Content Include="Images\approved.png" />
+    <Content Include="Images\blank.gif" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\flags.png" />
+    <Content Include="Images\Folder-Add-icon.png" />
+    <Content Include="Images\hide-left-icon.png" />
+    <Content Include="Images\hr-icon.png" />
+    <Content Include="Images\hris.png" />
+    <Content Include="Images\hris_big.png" />
+    <Content Include="Images\img.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\new-file-icon.png" />
+    <Content Include="Images\notapproved.png" />
+    <Content Include="Images\other.png" />
+    <Content Include="Images\Package-add-icon.png" />
+    <Content Include="Images\previous-icon.png" />
+    <Content Include="Images\sign-up-icon.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\wait.png" />
+    <Content Include="LoginCss\css\main.css" />
+    <Content Include="LoginCss\css\util.css" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="LoginCss\fonts\montserrat\OFL.txt" />
+    <Content Include="LoginCss\fonts\raleway\OFL.txt" />
+    <Content Include="LoginCss\images\avatar-01.jpg" />
+    <Content Include="LoginCss\images\icons\favicon.ico" />
+    <Content Include="LoginCss\images\icons\icon-google.png" />
+    <Content Include="LoginCss\images\img-01.jpg" />
+    <Content Include="LoginCss\js\main.js" />
+    <Content Include="LoginCss\vendor\animate\animate.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="LoginCss\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="LoginCss\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="LoginCss\vendor\bootstrap\js\popper.js" />
+    <Content Include="LoginCss\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="LoginCss\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="LoginCss\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="LoginCss\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="LoginCss\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="LoginCss\vendor\select2\select2.css" />
+    <Content Include="LoginCss\vendor\select2\select2.js" />
+    <Content Include="LoginCss\vendor\select2\select2.min.css" />
+    <Content Include="LoginCss\vendor\select2\select2.min.js" />
+    <Content Include="Models\Hris.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hris.edmx</DependentUpon>
+      <LastGenOutput>Hris.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Hris.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hris.edmx</DependentUpon>
+      <LastGenOutput>Hris.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min - Copy.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\fastclick.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="wwwroot\css\Gridmvc.css" />
+    <Content Include="wwwroot\js\gridmvc.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="LoginCss\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="LoginCss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="LoginCss\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="LoginCss\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="LoginCss\fonts\raleway\Raleway-ThinItalic.ttf" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="LoginCss\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\Hris.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Hris.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Hris.edmx.diagram">
+      <DependentUpon>Hris.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\nprogress.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\JobDescription\JD.cshtml" />
+    <Content Include="Views\JobAssignment\JA.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Views\JobAssignment\CreateJA.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\JobAssignment\AddKpiView.cshtml" />
+    <Content Include="Views\JobAssignment\DdlOnChange.cshtml" />
+    <Content Include="Views\JobAssignment\AddKeyView.cshtml" />
+    <Content Include="Views\JobAssignment\EditKeyView.cshtml" />
+    <Content Include="Views\JobAssignment\AddSubKeyView.cshtml" />
+    <Content Include="Views\JobAssignment\EditKpiView.cshtml" />
+    <Content Include="Views\JobAssignment\AddSecondaryView.cshtml" />
+    <Content Include="Views\JobAssignment\EditSecondaryView.cshtml" />
+    <Content Include="Views\JobAssignment\AddOtherView.cshtml" />
+    <Content Include="Views\JobAssignment\EditOtherView.cshtml" />
+    <Content Include="Views\JobAssignment\AddExtraView.cshtml" />
+    <Content Include="Views\JobAssignment\EditExtraView.cshtml" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\JobDescription\JDSearch.cshtml" />
+    <Content Include="Views\Home\LoginView.cshtml" />
+    <Content Include="Views\JobAssignment\JaSearch.cshtml" />
+    <Content Include="Views\JobAssignment\JaHeadSearch.cshtml" />
+    <Content Include="Views\Home\LoginAdminView.cshtml" />
+    <Content Include="Views\JobAssignment\JaAdminSearch.cshtml" />
+    <Content Include="Views\JobAssignment\JAForManager.cshtml" />
+    <Content Include="Views\JobAssignment\JAForManagerCommentView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Views\HRISEntities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\CrystalReport1Test.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1Test.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GlobalRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalRes.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>home.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\home.th.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>home.th.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Languages.th.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Languages.th.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Languages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Languages.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\JobAgreementReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>JobAgreementReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GlobalRes.th.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalRes.th.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57689</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57689/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.7.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.7.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

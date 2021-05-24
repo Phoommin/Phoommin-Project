@@ -1,0 +1,520 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+    ViewBag.Title = "Job Assignments";
+    var jat = (JAMaster)ViewData["jaDetails"];
+}
+
+@Styles.Render("~/Content/StyleSheet1.css")
+
+@if (Session["Alert"].ToString() == "1")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมทั้งหมดไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "2")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมของตัวชี้วัดไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "3")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมของหน้าที่หลักไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "4")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมของหน้าที่รองไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "5")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมของหน้าที่อื่นๆไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "6")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("น้ำหนักรวมของหน้าที่อื่นๆพิเศษไม่เท่ากับ 100");
+    </script>
+}
+else if (Session["Alert"].ToString() == "67")
+{
+    Session["Alert"] = "0";
+    <script type="text/javascript">
+        alert("บันทึกแบบร่างเรียบร้อยแล้ว");
+    </script>
+}
+else
+{
+
+}
+
+<script type="text/javascript">
+    function WeightKpiOnchange() {
+        var txtWeightKpi = document.getElementById("txtWeightKpi");
+        var url;
+        if (txtWeightKpi.value == "") {
+            url = "../../JobAssignment/WeightKpiOnchange/?w=" + "0.00";
+        } else {
+            url = "../../JobAssignment/WeightKpiOnchange/?w=" + String(txtWeightKpi.value);
+        }
+        
+        window.location.href = url;
+        }
+
+        function WeightKeyOnchange() {
+            var txtWeightKey = document.getElementById("txtWeightKey");
+            var url;
+
+            if (txtWeightKey.value == "") {
+                url = "../../JobAssignment/WeightKeyOnchange/?w=" + "0.00";
+            } else {
+                url = "../../JobAssignment/WeightKeyOnchange/?w=" + String(txtWeightKey.value);
+            }
+            
+            window.location.href = url;
+        }
+
+        function WeightSecOnchange() {
+            var txtWeightSec = document.getElementById("txtWeightSec");
+            var url;
+
+            if (txtWeightSec.value == "") {
+                url = "../../JobAssignment/WeightSecOnchange/?w=" + "0.00";
+            } else {
+                url = "../../JobAssignment/WeightSecOnchange/?w=" + String(txtWeightSec.value);
+            }
+            
+            window.location.href = url;
+        }
+
+        function WeightOtherOnchange() {
+            var txtWeightOther = document.getElementById("txtWeightOther");
+            var url;
+
+            if (txtWeightOther.value == "") {
+                url = "../../JobAssignment/WeightOtherOnchange/?w=" + "0.00";
+            } else {
+                url = "../../JobAssignment/WeightOtherOnchange/?w=" + String(txtWeightOther.value);
+            }
+            
+            window.location.href = url;
+        }
+
+    $(function () {
+        $("#btnSet").click(function () {
+            
+        });
+    });
+</script>
+
+@{
+    decimal? txtWeightKpi = decimal.Parse(Session["txtWeightKpi"].ToString());
+    decimal? txtWeightKey = decimal.Parse(Session["txtWeightKey"].ToString());
+    decimal? txtWeightSec = decimal.Parse(Session["txtWeightSec"].ToString());
+    decimal? txtWeightOther = decimal.Parse(Session["txtWeightOther"].ToString());
+}
+
+@using (Html.BeginForm("Check_Submit", "JobAssignment", new { id = jat.id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+        <table align="center" width="100%" border="0">
+            <tr>
+                <td colspan="6" align="center"> @Session["txtWeightOther"].ToString()<img style="width: 200px; height: 120px;" src="~/Images/syn_logo.png" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="6" align="center"><h4>แบบข้อตกลงปฏิบัติงาน (Job Agreement)<br />สถาบันวิจัยแสงซินโครตรอน (องค์การมหาชน)<br /><br /></h4></td>
+            </tr>
+
+            <tr>
+                <td colspan="6">
+                    <table border="0" align="center" width="100%">
+                        <tr>
+                            <td colspan="6" align="left">
+                                <b>1) รายละเอียดของตำแหน่ง </b> (Position) <br /><br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <table border="0" align="center" class="styled-table-1" width="100%">
+
+                                    <tr>
+                                        <td  align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อ-นามสกุล</td>
+                                        <td  colspan="3"> &nbsp;&nbsp; @jat.fullname </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td  align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อตำแหน่ง</td>
+                                        <td  colspan="3"> &nbsp;&nbsp; @jat.empPosition </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อส่วนงาน</td>
+                                        <td  colspan="3">&nbsp;&nbsp; @jat.empSection </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td  align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อฝ่าย</td>
+                                        <td >&nbsp;&nbsp; @jat.empDepartment </td>
+                                        <td  bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;วันที่จัดทำ</td>
+                                        <td >&nbsp;&nbsp; @DateTime.Now.ToString("dd-MM-yyyy")</td>
+                                    </tr>
+
+                                </table>
+
+                                <br />
+                            </th>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" align="left" class="auto-style1">
+                                <b>2) วัตถุประสงค์  </b> (Job Purpose) <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left">
+                                <label id="taPurpose" name="taPurpose" style="width: 100%;">&nbsp;&nbsp;@jat.JobPurpose</label><br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="center">
+                                <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left">
+                                <b>3) ตัวชี้วัด   </b> (KPI)
+                            </td>
+                        </tr>
+
+                        <tr style="display:none">
+                            <td colspan="6" align="right">
+                                น้ำหนัก&nbsp;
+                               @* @Html.TextBox("txtWeightKpi", txtWeightKpi, new { @type="number", @step = "0.01;", @style = "width:65px;", @onchange="WeightKpiOnchange()" })*@
+                                <input type="number" name="txtWeightKpi" id="txtWeightKpi" step="0.01" style="width:65px" placeholder="0.00" value="@txtWeightKpi" onChange="WeightKpiOnchange()" required />&nbsp;
+                                %
+                                &nbsp;&nbsp;&nbsp;
+                                @Html.ActionLink("Add New", "AddKpiView", "JobAssignment", new { id = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                        <tr style="display:none">
+                            <td>
+                                <table border="0" align="center" width="100%" class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th  align="center">รายละเอียด</th>
+                                            <th  align="center">เป้าหมาย</th>
+                                            <th  align="center">ผู้ร่วมงาน</th>
+                                            <th  align="center">น้ำหนัก</th>
+                                            <th  align="center"></th>
+                                            <th  align="center"></th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (JoinKpi K in ViewBag.listKpi)
+                                    {
+                                        <tr>
+                                            <td height="50"> @K.Kpi.KPIDescription</td>
+                                            <td height="50"> @K.Kpi.KPIGoal</td>
+                                            <td height="50"> @K.employees.TitleTH@K.employees.FirstNameTH &nbsp;@K.employees.LastNameTH </td>
+                                            <td height="50"  align="center"> <input type="text" style="width:50px" disabled value="@K.Kpi.KPIWeight" /></td>
+                                            <td height="50" align="center">@Html.ActionLink("Edit", "EditKpiView", "JobAssignment", new { id = K.Kpi.id }, new { enctype = "multipart/form-data", onclick = "#Add_Kpi", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                            <td height="50" align="center">@Html.ActionLink("X", "Delete_Kpi", "JobAssignment", new { id = K.Kpi.id }, new { enctype = "multipart/form-data", onclick = "return confirm('คุณต้องการลบข้อมูลนี้ใช่ไหม');", @class = "btn btn-danger", @style = "border-radius: 20px 20px 20px 20px; width: 45px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        </tr>
+                                    }
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="center">
+                                <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left" class="auto-style1">
+                                <b>4) หน้าที่หลัก/กิจกรรมหลัก   </b> (Key Responsibilities and Activities)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1" width="100%">
+                                น้ำหนัก&nbsp;
+                                <input type="number" name="txtWeightKey" id="txtWeightKey" step="0.01" style="width:65px" placeholder="0.00" value="@txtWeightKey" onchange="WeightKeyOnchange()" required />&nbsp;
+                                %
+                                &nbsp;&nbsp;&nbsp;
+                                @Html.ActionLink("Add New", "AddKeyView", "JobAssignment", new { id = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table border="0" align="center" width="100%" class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th  align="center">รายละเอียด</th>
+                                            <th  align="center"></th>
+                                            <th  align="center">เป้าหมาย</th>
+                                            <th  align="center">ผู้ร่วมงาน</th>
+                                            <th  align="center">น้ำหนัก</th>
+                                            <th  align="center"></th>
+                                            <th  align="center"></th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (JoinKey K in ViewBag.listKey)
+                                    {
+                                <tr>
+                                    @if (K.Key.addSubCheck == null)
+                                    {
+                                        <td height="50" width="30%"><div class="col-lg-1" style="width: 20px;"></div>@K.Key.descriptionKey</td>
+                                    }
+                                    else
+                                    {
+                                        <td height="50" width="30%"> @K.Key.descriptionKey</td>
+                                    }
+
+                                    @if (K.Key.addSubCheck != null)
+                                    {
+                                        <td height="50" width="10%" align="center"> @Html.ActionLink("ADD", "AddSubKeyView", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-dark", @style = "border-radius: 40px 40px 40px 40px; box-shadow: 5px 5px 20px #00000029; width:100%;" })</td>
+                                    }
+                                    else
+                                    {
+                                        @*if (K.Key.isOder == 1 && K.Key.isOder != null && K.Key.addSubCheck != "K")
+                                        {
+                                            <td width="10%">
+                                                <button class="btn btn-warning" style="border-radius: 40px 40px 40px 40px; box-shadow: 5px 5px 20px #00000029;" disabled>▲</button>
+                                                @Html.ActionLink("▼", "DownChange", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id, idRefSub = K.Key.idRefSub, isOder = K.Key.isOder }, new { enctype = "multipart/form-data", @class = "btn btn-danger", @style = "border-radius: 40px 40px 40px 40px; box-shadow: 5px 5px 20px #00000029;" })
+                                            </td>
+                                        }
+                                        else
+                                        {*@
+                                            <td width="10%">
+                                                @Html.ActionLink("▲", "UpChange", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id, idRefSub = K.Key.idRefSub, isOder = K.Key.isOder }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 40px 40px 40px 40px; box-shadow: 5px 5px 20px #00000029;" })
+                                                @Html.ActionLink("▼", "DownChange", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id, idRefSub = K.Key.idRefSub, isOder = K.Key.isOder }, new { enctype = "multipart/form-data", @class = "btn btn-danger", @style = "border-radius: 40px 40px 40px 40px; box-shadow: 5px 5px 20px #00000029;" })
+                                            </td>
+                                        @*}*@
+
+                                    }
+
+                                    <td height="50" width="25%"> @K.Key.goal</td>
+                                    <td height="50" width="15%"> @K.employees.TitleTH@K.employees.FirstNameTH &nbsp;@K.employees.LastNameTH </td>
+                                    <td height="50" width="5%" align="center"> <input type="text" style="width:50px" disabled value="@K.Key.weight" /></td>
+
+                                    @if (K.Key.addSubCheck != null)
+                                    {
+                                        <td height="50" width="5%" align="center">@Html.ActionLink("Edit", "EditKeyView", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        if (K.Key.sumSubKey == null)
+                                        {
+                                            <td height="50" width="5%" align="center">0 /100</td>
+                                        }
+                                        else
+                                        {
+                                            <td height="50" width="5%" align="center">@K.Key.sumSubKey /100</td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td height="50" width="5%" align="center">@Html.ActionLink("Edit", "EditKeyView", "JobAssignment", new { id = K.Key.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        <td height="50" width="5%" align="center">@Html.ActionLink("X", "Delete_Key", "JobAssignment", new { id = K.Key.id }, new { enctype = "multipart/form-data", onclick = "return confirm('คุณต้องการลบข้อมูลนี้ใช่ไหม');", @class = "btn btn-danger", @style = "border-radius: 20px 20px 20px 20px; width: 45px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                    }
+
+                                </tr>
+                                    }
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="center" class="auto-style1">
+                                <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left" class="auto-style1">
+                                <b>5) หน้าที่รอง/กิจกรรมรอง   </b> (Secondary Activities)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1">
+                                น้ำหนัก&nbsp;
+                                <input type="number" name="txtWeightSec" id="txtWeightSec" step="0.01" style="width:65px" placeholder="0.00" value="@txtWeightSec" onchange="WeightSecOnchange()" required />&nbsp;
+                                %
+                                &nbsp;&nbsp;&nbsp;
+                                @Html.ActionLink("Add New", "AddSecondaryView", "JobAssignment", new { id = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table border="0" align="center" width="100%" class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th  align="center">รายละเอียด</th>
+                                            <th  align="center">เป้าหมาย</th>
+                                            <th  align="center">ผู้ร่วมงาน</th>
+                                            <th  align="center">น้ำหนัก</th>
+                                            <th  align="center"></th>
+                                            <th  align="center"></th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (JoinSec S in ViewBag.listSecondKey)
+                                    {
+                                        <tr>
+                                            <td height="50"> @S.Sec.descriptionSecondary</td>
+                                            <td height="50"> @S.Sec.goal</td>
+                                            <td height="50"> @S.employees.TitleTH@S.employees.FirstNameTH &nbsp;@S.employees.LastNameTH </td>
+                                            <td height="50"  align="center"> <input type="text" style="width:50px" disabled value="@S.Sec.weight" /></td>
+                                            <td height="50" align="center">@Html.ActionLink("Edit", "EditSecondaryView", "JobAssignment", new { id = S.Sec.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                            <td height="50" align="center">@Html.ActionLink("X", "Delete_Secondary", "JobAssignment", new { id = S.Sec.id }, new { enctype = "multipart/form-data", onclick = "return confirm('คุณต้องการลบข้อมูลนี้ใช่ไหม');", @class = "btn btn-danger", @style = "border-radius: 20px 20px 20px 20px; width: 45px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        </tr>
+                                    }
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" align="center" class="auto-style1">
+                                <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left" class="auto-style1">
+                                <b>6) หน้าที่อื่น/กิจกรรมอื่น     </b> (Other Activities)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1">
+                                น้ำหนัก&nbsp;
+                                <input type="number" name="txtWeightOther" id="txtWeightOther" step="0.01" style="width:65px" placeholder="0.00"  value="@txtWeightOther" onchange="WeightOtherOnchange()" required />&nbsp;
+                                %
+                                &nbsp;&nbsp;&nbsp;
+                                @Html.ActionLink("Add New", "AddOtherView", "JobAssignment", new { id = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table border="0" align="center" width="100%" class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th  align="center">รายละเอียด</th>
+                                            <th  align="center">เป้าหมาย</th>
+                                            <th  align="center">ผู้ร่วมงาน</th>
+                                            <th  align="center">
+                                                น้ำหนัก %
+                                            </th>
+                                            <th  align="center"></th>
+                                            <th  align="center"></th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (JoinOther O in ViewBag.listOtherKey)
+                                    {
+                                        <tr>
+                                            <td height="50"> @O.Other.descriptionOther</td>
+                                            <td height="50"> @O.Other.goal</td>
+                                            <td height="50"> @O.employees.TitleTH@O.employees.FirstNameTH &nbsp;@O.employees.LastNameTH </td>
+                                            <td height="50"  align="center"> <input type="text" style="width:50px" disabled value="@O.Other.weight" /></td>
+                                            <td height="50" align="center">@Html.ActionLink("Edit", "EditOtherView", "JobAssignment", new { id = O.Other.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                            <td height="50" align="center">@Html.ActionLink("X", "Delete_Other", "JobAssignment", new { id = O.Other.id }, new { enctype = "multipart/form-data", onclick = "return confirm('คุณต้องการลบข้อมูลนี้ใช่ไหม');", @class = "btn btn-danger", @style = "border-radius: 20px 20px 20px 20px; width: 45px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        </tr>
+                                    }
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="6" align="center" class="auto-style1">
+                                <br /><br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="left" class="auto-style1">
+                                <b>7) หน้าที่อื่นๆ พิเศษ    </b> (Extra Activities)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1">
+                                น้ำหนัก&nbsp;
+                                <input type="number" name="txtWeightExtra" id="txtWeightExtra" step="0.01" style="width:65px" value="@jat.extraWeight" disabled />&nbsp;
+                                %
+                                &nbsp;&nbsp;&nbsp;
+                                @Html.ActionLink("Add New", "AddExtraView", "JobAssignment", new { id = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table border="0" align="center" width="100%" class="styled-table">
+                                    <thead>
+                                        <tr>
+                                            <th  align="center">รายละเอียด</th>
+                                            <th  align="center">เป้าหมาย</th>
+                                            <th  align="center">ผู้ร่วมงาน</th>
+                                            <th  align="center">
+                                                น้ำหนัก %
+                                            </th>
+                                            <th  align="center"></th>
+                                            <th  align="center"></th>
+                                        </tr>
+                                    </thead>
+
+                                    @foreach (JoinExtra E in ViewBag.listExtraKey)
+                                    {
+                                        <tr>
+                                            <td height="50"> @E.Extra.descriptionExtra</td>
+                                            <td height="50"> @E.Extra.goal</td>
+                                            <td height="50"> @E.employees.TitleTH@E.employees.FirstNameTH &nbsp;@E.employees.LastNameTH </td>
+                                            <td height="50"  align="left"> <input type="text" style="width:50px" disabled value="@E.Extra.weight" /></td>
+                                            <td height="50" align="center">@Html.ActionLink("Edit", "EditExtraView", "JobAssignment", new { id = E.Extra.id, jaMasterId = jat.id }, new { enctype = "multipart/form-data", @class = "btn btn-primary", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                            <td height="50" align="center">@Html.ActionLink("X", "Delete_Extra", "JobAssignment", new { id = E.Extra.id }, new { enctype = "multipart/form-data", onclick = "return confirm('คุณต้องการลบข้อมูลนี้ใช่ไหม');", @class = "btn btn-danger", @style = "border-radius: 20px 20px 20px 20px; width: 45px; box-shadow: 5px 5px 20px #00000029;" })</td>
+                                        </tr>
+                                    }
+
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td height="50" align="center">
+                                <button value="saveDraft" name="saveDraft" id="saveDraft" class="btn btn-primary">Save Draft</button>&nbsp;&nbsp;
+                                <button value="submit" name="submit" id="submit" class="btn btn-success" style="background-color:#80c904">Submit</button>&nbsp;&nbsp;
+                                <button type="reset" class="btn btn-danger">Cancel</button>
+                            </td>
+                        </tr>
+                    </table>
+        </table>
+}
+
+
+

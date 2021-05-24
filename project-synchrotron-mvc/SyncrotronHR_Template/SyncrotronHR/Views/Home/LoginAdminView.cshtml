@@ -1,0 +1,56 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+    ViewBag.Title = "Job Assignments";
+    var jat = (JAMaster)ViewData["jaDetails"];
+}
+<head>
+    <title>Login V12</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="~/LoginCss/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/LoginCss/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/LoginCss/css/main.css">
+
+</head>
+
+
+@using (Html.BeginForm("LoginAdmin", "Home", FormMethod.Post, new { @class = "login" }))
+{
+    <div style="width: 400px; align-content:center;">
+
+        <span class="login100-form-title p-t-20 p-b-45">
+            <b>Admin Login</b>
+        </span>
+
+        <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
+            <input class="input100" type="text" id="taUsername" name="taUsername" placeholder="Username">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-user"></i>
+            </span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+            <input class="input100" type="password" id="taPassword" name="taPassword" placeholder="Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-lock"></i>
+            </span>
+        </div>
+
+        <div class="container-login100-form-btn p-t-10">
+            <button class="login100-form-btn" type="submit">
+                Login
+            </button>
+        </div>
+
+
+    </div>
+}
+
+
+
+
+

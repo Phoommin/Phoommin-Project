@@ -1,0 +1,292 @@
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\ApplicationInsights.config
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\csc.exe
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\System.Collections.Immutable.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\System.Reflection.Metadata.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\vbc.exe
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\VBCSCompiler.exe
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\roslyn\VBCSCompiler.exe.config
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.config
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.pdb
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\th\SynchrotronHR.resources.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.CodeAnalysisLog.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.lastcodeanalysissucceeded
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Antlr3.Runtime.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\EntityFramework.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\EntityFramework.SqlServer.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.DependencyCollector.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Web.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.WindowsServer.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.ApplicationInsights.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.Web.Infrastructure.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Newtonsoft.Json.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Helpers.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Mvc.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Optimization.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Razor.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Deployment.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Razor.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\WebGrease.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\EntityFramework.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\EntityFramework.SqlServer.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.DependencyCollector.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Web.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.WindowsServer.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.ApplicationInsights.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Helpers.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Mvc.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Optimization.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.Razor.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Deployment.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Razor.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Antlr3.Runtime.pdb
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\bin\Newtonsoft.Json.xml
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.resources
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.th.resources
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.GenerateResource.Cache
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\th\SynchrotronHR.resources.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.dll
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.pdb
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.csprojResolveAssemblyReference.cache
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.resources
+D:\Syncrotron HR\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.th.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\ApplicationInsights.config
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\csc.exe
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\vbc.exe
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.config
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.pdb
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\th\SynchrotronHR.resources.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.CodeAnalysisLog.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\SynchrotronHR.dll.lastcodeanalysissucceeded
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Web.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.Web.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.th.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.th.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\th\SynchrotronHR.resources.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.dll
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.pdb
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.resources
+C:\Users\Administrator\Desktop\SyncrotronHR\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.th.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\ApplicationInsights.config
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.exe
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Collections.Immutable.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Reflection.Metadata.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.exe
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\VBCSCompiler.exe
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\VBCSCompiler.exe.config
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.config
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.pdb
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\th\SynchrotronHR.resources.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.CodeAnalysisLog.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.lastcodeanalysissucceeded
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Antlr3.Runtime.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.SqlServer.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.Web.Infrastructure.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Newtonsoft.Json.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Helpers.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Mvc.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Optimization.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Razor.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Deployment.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Razor.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.SqlServer.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Helpers.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Mvc.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Optimization.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Razor.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Deployment.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Razor.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Antlr3.Runtime.pdb
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Newtonsoft.Json.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.th.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.th.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.th.resources
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.GenerateResource.cache
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.CoreCompileInputs.cache
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\th\SynchrotronHR.resources.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.CopyComplete
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.pdb
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Net.Http.Formatting.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.WebHost.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Net.Http.Formatting.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.WebHost.xml
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.exe.config
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.rsp
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csi.exe
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csi.rsp
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.AppContext.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.IO.FileSystem.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.exe.config
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.rsp
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\GridMvc.dll
+D:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csprojAssemblyReference.cache
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\ApplicationInsights.config
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.config
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.pdb
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\th\SynchrotronHR.resources.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.exe
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.exe.config
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csc.rsp
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csi.exe
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\csi.rsp
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.AppContext.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Collections.Immutable.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.IO.FileSystem.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\System.Reflection.Metadata.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.exe
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.exe.config
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\vbc.rsp
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\VBCSCompiler.exe
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\roslyn\VBCSCompiler.exe.config
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.CodeAnalysisLog.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\SynchrotronHR.dll.lastcodeanalysissucceeded
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Antlr3.Runtime.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.SqlServer.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\GridMvc.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.Web.Infrastructure.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Newtonsoft.Json.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Net.Http.Formatting.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Helpers.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.WebHost.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Mvc.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Optimization.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Razor.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Deployment.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Razor.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Antlr3.Runtime.pdb
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\EntityFramework.SqlServer.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\Newtonsoft.Json.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Net.Http.Formatting.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Helpers.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Http.WebHost.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Mvc.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Razor.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Deployment.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.WebPages.Razor.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\bin\System.Web.Optimization.xml
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.home.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.Languages.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.Resources.GlobalRes.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.GenerateResource.cache
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.CoreCompileInputs.cache
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\th\SynchrotronHR.resources.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csproj.CopyComplete
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.dll
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.pdb
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\Debug\SynchrotronHR.csprojAssemblyReference.cache

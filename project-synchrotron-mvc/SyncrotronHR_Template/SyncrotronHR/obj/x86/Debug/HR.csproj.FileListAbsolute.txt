@@ -1,0 +1,9 @@
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.csprojAssemblyReference.cache
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.GlobalRes.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.home.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.Languages.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.GlobalRes.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.home.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.Resources.Languages.th.resources
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.csproj.GenerateResource.cache
+C:\Co-op2020\MVC\SyncrotronHR_Template\SyncrotronHR\obj\x86\Debug\HR.csproj.CoreCompileInputs.cache

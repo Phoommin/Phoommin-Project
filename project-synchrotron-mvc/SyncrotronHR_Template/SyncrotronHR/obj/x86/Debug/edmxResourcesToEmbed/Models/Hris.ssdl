@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Department" Type="nvarchar" MaxLength="256" />
+    <Property Name="Section" Type="nvarchar" MaxLength="256" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="DateWorkStart" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Password" Type="nvarchar" MaxLength="64" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserType" Type="char" MaxLength="1" />
+    <Property Name="UserStatus" Type="char" MaxLength="1" />
+    <Property Name="LoginDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AccountJD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="accountId" Type="nvarchar" MaxLength="128" />
+    <Property Name="jdId" Type="int" />
+    <Property Name="yearId" Type="int" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="accountManager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="accountId" Type="int" />
+    <Property Name="managerIdLevel1" Type="int" />
+    <Property Name="managerIdLevel2" Type="int" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SLRI_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CardID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Orders" Type="int" />
+    <Property Name="FirstNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="MiddleNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployeeLevelID" Type="nvarchar" MaxLength="128" />
+    <Property Name="EmployeeLevel" Type="nvarchar" MaxLength="256" />
+    <Property Name="DepID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Department" Type="nvarchar" MaxLength="256" />
+    <Property Name="SectorID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="256" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="ReportPosition" Type="nvarchar" MaxLength="256" />
+    <Property Name="ContractID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Contract" Type="nvarchar" MaxLength="256" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SocialSecurity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taxpayer" Type="nvarchar" MaxLength="50" />
+    <Property Name="FundNo" Type="nvarchar" MaxLength="128" />
+    <Property Name="PassportID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Stafflevel" Type="nvarchar" MaxLength="256" />
+    <Property Name="StaffType" Type="nvarchar" MaxLength="256" />
+    <Property Name="SWD" Type="date" />
+    <Property Name="GWD" Type="date" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="256" />
+    <Property Name="WageCalculation" Type="nvarchar" MaxLength="256" />
+    <Property Name="HouseNo" Type="nvarchar" MaxLength="256" />
+    <Property Name="HouseNo_ht" Type="nvarchar" MaxLength="256" />
+    <Property Name="Building" Type="nvarchar" MaxLength="256" />
+    <Property Name="Building_ht" Type="nvarchar" MaxLength="256" />
+    <Property Name="Soi" Type="nvarchar" MaxLength="128" />
+    <Property Name="Soi_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Street" Type="nvarchar" MaxLength="128" />
+    <Property Name="Street_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Province" Type="nvarchar" MaxLength="128" />
+    <Property Name="Province_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="District" Type="nvarchar" MaxLength="128" />
+    <Property Name="District_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="SubDistrict" Type="nvarchar" MaxLength="128" />
+    <Property Name="SubDistrict_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="ZIPcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ZIPcode_ht" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="128" />
+    <Property Name="Country_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_ht" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="InternalPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="128" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="256" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Race" Type="nvarchar" MaxLength="128" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="128" />
+    <Property Name="Religion" Type="nvarchar(max)" />
+    <Property Name="BloodType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Appearance" Type="nvarchar" MaxLength="256" />
+    <Property Name="Earmark" Type="nvarchar" MaxLength="256" />
+    <Property Name="email" Type="nvarchar" MaxLength="256" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="256" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="256" />
+    <Property Name="Instragram" Type="nvarchar" MaxLength="256" />
+    <Property Name="LineID" Type="nvarchar" MaxLength="256" />
+    <Property Name="MilitaryStatus" Type="nvarchar" MaxLength="256" />
+    <Property Name="CongenitalDisease" Type="nvarchar" MaxLength="256" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Hobby" Type="nvarchar" MaxLength="256" />
+    <Property Name="Sport" Type="nvarchar" MaxLength="256" />
+    <Property Name="Smoking" Type="bit" Nullable="false" />
+    <Property Name="Typewriter" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverLicense" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotorcycleDriverLicense" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToeicScore" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ToeflScore" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountBank" Type="nvarchar" MaxLength="256" />
+    <Property Name="ForeignerStatus" Type="bit" Nullable="false" />
+    <Property Name="FamilyStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="evaluatePercentManager">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yearControlId" Type="int" />
+    <Property Name="empId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Department" Type="nvarchar" MaxLength="256" />
+    <Property Name="Section" Type="nvarchar" MaxLength="256" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="percentKnowledge" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="percentAttribute" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="JAControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+    <Property Name="jaStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+    <Property Name="masterEmpId" Type="int" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="200" />
+    <Property Name="education" Type="nvarchar" MaxLength="500" />
+    <Property Name="major" Type="nvarchar" MaxLength="500" />
+    <Property Name="experience" Type="ntext" />
+    <Property Name="empPosition" Type="nvarchar" MaxLength="500" />
+    <Property Name="empSection" Type="nvarchar" MaxLength="500" />
+    <Property Name="empDepartment" Type="nvarchar" MaxLength="500" />
+    <Property Name="JACreatedDate" Type="datetime" />
+    <Property Name="JobPurpose" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="keyResponsibilitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="secondaryActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="otherActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="extraWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="competenciesKnowledge" Type="ntext" />
+    <Property Name="competenciesSkill" Type="ntext" />
+    <Property Name="competenciesAbilities" Type="ntext" />
+    <Property Name="other" Type="ntext" />
+    <Property Name="insideDepartment" Type="ntext" />
+    <Property Name="outsideDepartment" Type="ntext" />
+    <Property Name="outsideSLRI" Type="ntext" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterExtraDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionExtra" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterKeyResponsibilitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="subKeyId" Type="int" />
+    <Property Name="descriptionKey" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="addSubCheck" Type="char" MaxLength="1" />
+    <Property Name="idRefSub" Type="int" />
+    <Property Name="levelDisplay" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterKPIDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="KPIName" Type="ntext" />
+    <Property Name="KPIDescription" Type="ntext" />
+    <Property Name="KPIGoal" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterOtherActivitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionOther" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterSecondaryActivitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionSecondary" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jdPosition" Type="nvarchar(max)" />
+    <Property Name="jdDepartment" Type="nvarchar(max)" />
+    <Property Name="jdPurpose" Type="nvarchar(max)" />
+    <Property Name="keyResponsibilities" Type="ntext" />
+    <Property Name="secondaryActivities" Type="ntext" />
+    <Property Name="otherActivities" Type="ntext" />
+    <Property Name="positionOfDirectSuperior" Type="ntext" />
+    <Property Name="positionOfDirectSubordinate" Type="ntext" />
+    <Property Name="amountOfDirectSubordinate" Type="int" />
+    <Property Name="amountSubordinate" Type="int" />
+    <Property Name="insideDepartment" Type="ntext" />
+    <Property Name="outsideDepartment" Type="ntext" />
+    <Property Name="outsideSLRI" Type="ntext" />
+    <Property Name="EduBackground" Type="ntext" />
+    <Property Name="major" Type="ntext" />
+    <Property Name="proExp" Type="ntext" />
+    <Property Name="competenciesKnowledge" Type="ntext" />
+    <Property Name="competenciesSkill" Type="ntext" />
+    <Property Name="competenciesAbilities" Type="ntext" />
+    <Property Name="other" Type="ntext" />
+    <Property Name="jdStatus" Type="char" MaxLength="1" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMasterEmp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empId" Type="nvarchar" MaxLength="128" />
+    <Property Name="jdId" Type="int" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMasterSub">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jdMasterId" Type="int" />
+    <Property Name="descriptionSub" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="subType" Type="varchar" MaxLength="50" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="KPIYear" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="KPIName" Type="ntext" />
+    <Property Name="KPIDetail" Type="ntext" />
+    <Property Name="KPIGoal" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="KPIResult" Type="nvarchar" MaxLength="2000" />
+    <Property Name="KPIScore" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="KPIHeader" Type="int" />
+    <Property Name="isOrder" Type="int" />
+    <Property Name="GoalRang1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang3" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang5" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="KPIStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIJoin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="accountId" Type="int" />
+    <Property Name="percentJoin" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="percentJoinScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="percentWorkload" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="percentWorkloadScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIReport">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="reportQuarter" Type="int" />
+    <Property Name="reportResult" Type="nvarchar" MaxLength="1000" />
+    <Property Name="reportScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="reportRemark" Type="ntext" />
+    <Property Name="path" Type="nvarchar" MaxLength="1000" />
+    <Property Name="fileName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="fileNameOld" Type="nvarchar" MaxLength="1000" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="cretaedDate" Type="datetime" />
+    <Property Name="reportStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIResponsible">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PercentManagerId" Type="int" />
+    <Property Name="attributeId" Type="int" />
+    <Property Name="KPIYearControlId" Type="int" />
+    <Property Name="employeeId" Type="int" />
+    <Property Name="scoreAttribute" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="updatedBy" Type="int" />
+    <Property Name="updatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterAtribute">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="attributeName" Type="nvarchar(max)" />
+    <Property Name="attributeDetail" Type="nvarchar(max)" />
+    <Property Name="attributePercent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="attributeStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="masterDDL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ddlType" Type="nvarchar" MaxLength="100" />
+    <Property Name="ddlValue" Type="nvarchar" MaxLength="100" />
+    <Property Name="ddlDisplay" Type="nvarchar" MaxLength="100" />
+    <Property Name="ddlStatus" Type="char" MaxLength="1" />
+    <Property Name="ddlOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="masterKPIType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupKPI" Type="int" />
+    <Property Name="KPITypeDetail" Type="nvarchar(max)" />
+    <Property Name="KPITypeYear" Type="nvarchar" MaxLength="4" />
+    <Property Name="KPITypeStatus" Type="char" MaxLength="1" />
+    <Property Name="isOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="masterKPITypeSub">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubDetail" Type="nvarchar(max)" />
+    <Property Name="KPITypeSubStatus" Type="char" MaxLength="1" />
+    <Property Name="isOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="masterKPIYear">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIYearDetail" Type="nvarchar" MaxLength="10" />
+    <Property Name="KPIYearStatus" Type="char" MaxLength="1" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterKPIYearControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIYearId" Type="int" />
+    <Property Name="KPIQuarterId" Type="int" />
+    <Property Name="KPIDetail" Type="nvarchar" MaxLength="1000" />
+    <Property Name="KPIStatus" Type="char" MaxLength="1" />
+    <Property Name="StatusLV1Evaluated" Type="char" MaxLength="1" />
+    <Property Name="StatusLV2Evaluated" Type="char" MaxLength="1" />
+    <Property Name="createdDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterProject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="KPIYear" Type="int" />
+    <Property Name="projectName" Type="ntext" />
+    <Property Name="projectHeader" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TransactionKPIDisplay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yid" Type="int" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="SubGroupId" Type="int" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="isActive" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="HRISModelStoreContainer">
+    <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountJD" EntityType="Self.AccountJD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="accountManager" EntityType="Self.accountManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="evaluatePercentManager" EntityType="Self.evaluatePercentManager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAControl" EntityType="Self.JAControl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMaster" EntityType="Self.JAMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterExtraDetail" EntityType="Self.JAMasterExtraDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterKeyResponsibilitiesDetail" EntityType="Self.JAMasterKeyResponsibilitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterKPIDetail" EntityType="Self.JAMasterKPIDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterOtherActivitiesDetail" EntityType="Self.JAMasterOtherActivitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterSecondaryActivitiesDetail" EntityType="Self.JAMasterSecondaryActivitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMaster" EntityType="Self.JDMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMasterEmp" EntityType="Self.JDMasterEmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMasterSub" EntityType="Self.JDMasterSub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPI" EntityType="Self.KPI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIJoin" EntityType="Self.KPIJoin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIReport" EntityType="Self.KPIReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIResponsible" EntityType="Self.KPIResponsible" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterAtribute" EntityType="Self.masterAtribute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterDDL" EntityType="Self.masterDDL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIType" EntityType="Self.masterKPIType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPITypeSub" EntityType="Self.masterKPITypeSub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIYear" EntityType="Self.masterKPIYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIYearControl" EntityType="Self.masterKPIYearControl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterProject" EntityType="Self.masterProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionKPIDisplay" EntityType="Self.TransactionKPIDisplay" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

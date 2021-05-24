@@ -1,0 +1,1674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContractTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="ContractEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="CountryTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="DepartmentTH" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DepartmentEN" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Upright" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Districts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="NameInThai" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="NameInEnglish" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ProvinceId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Divisions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="DepartmentCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="DivisionCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="DivisionTH" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DivisionEN" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Upright" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EduTH" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="EduEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeeContact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactType" Type="nvarchar" MaxLength="256" />
+    <Property Name="ContractNo" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="128" />
+    <Property Name="ContactDate" Type="date" />
+    <Property Name="EndContactDate" Type="date" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeeDep">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="SubDepartment" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="128" />
+    <Property Name="DepDate" Type="date" />
+    <Property Name="EndDepDate" Type="date" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeeEDU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Educational" Type="nvarchar" MaxLength="256" />
+    <Property Name="Branch" Type="nvarchar" MaxLength="256" />
+    <Property Name="Institution" Type="nvarchar" MaxLength="256" />
+    <Property Name="AdmissionYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="GraduationYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="128" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeeFamily">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="MiddleNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="Office" Type="nvarchar" MaxLength="256" />
+    <Property Name="OfficeTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="HouseNo" Type="nvarchar" MaxLength="256" />
+    <Property Name="Building" Type="nvarchar" MaxLength="256" />
+    <Property Name="Soi" Type="nvarchar" MaxLength="128" />
+    <Property Name="Street" Type="nvarchar" MaxLength="128" />
+    <Property Name="Province" Type="nvarchar" MaxLength="128" />
+    <Property Name="District" Type="nvarchar" MaxLength="128" />
+    <Property Name="Subdistrict" Type="nvarchar" MaxLength="128" />
+    <Property Name="ZIPcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="256" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Occupation" Type="nvarchar" MaxLength="128" />
+    <Property Name="Status" Type="nvarchar" MaxLength="128" />
+    <Property Name="Relationship" Type="nvarchar" MaxLength="128" />
+    <Property Name="Children" Type="int" />
+    <Property Name="MarriageYear" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChildrenDependents" Type="int" />
+    <Property Name="ChildrenSequence" Type="int" />
+    <Property Name="EmergencyContact" Type="bit" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="BOD" Type="date" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="PersonalID" Type="nvarchar" MaxLength="50" />
+    <Property Name="PassportID" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeeLevel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeLevelTH" Type="nvarchar" MaxLength="128" />
+    <Property Name="EmployeeLevelEN" Type="nvarchar" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="EmployeePosition">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Positions" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployeeID" Type="nvarchar" MaxLength="128" />
+    <Property Name="DatePosition" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmpID" />
+    </Key>
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SLRI_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CardID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Orders" Type="int" />
+    <Property Name="FirstNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="MiddleNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="LastNameEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmployeeLevelID" Type="nvarchar" MaxLength="128" />
+    <Property Name="EmployeeLevel" Type="nvarchar" MaxLength="256" />
+    <Property Name="DepID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Department" Type="nvarchar(max)" />
+    <Property Name="SectorID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Sector" Type="nvarchar(max)" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="ReportPosition" Type="nvarchar" MaxLength="256" />
+    <Property Name="ContractID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Contract" Type="nvarchar" MaxLength="256" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonalID" Type="nvarchar" MaxLength="50" />
+    <Property Name="SocialSecurity" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taxpayer" Type="nvarchar" MaxLength="50" />
+    <Property Name="FundNo" Type="nvarchar" MaxLength="128" />
+    <Property Name="PassportID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Stafflevel" Type="nvarchar" MaxLength="256" />
+    <Property Name="StaffType" Type="nvarchar" MaxLength="256" />
+    <Property Name="SWD" Type="date" />
+    <Property Name="GWD" Type="date" />
+    <Property Name="Pic" Type="nvarchar" MaxLength="256" />
+    <Property Name="WageCalculation" Type="nvarchar" MaxLength="256" />
+    <Property Name="HouseNo" Type="nvarchar" MaxLength="256" />
+    <Property Name="HouseNo_ht" Type="nvarchar" MaxLength="256" />
+    <Property Name="Building" Type="nvarchar" MaxLength="256" />
+    <Property Name="Building_ht" Type="nvarchar" MaxLength="256" />
+    <Property Name="Soi" Type="nvarchar" MaxLength="128" />
+    <Property Name="Soi_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Street" Type="nvarchar" MaxLength="128" />
+    <Property Name="Street_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Province" Type="nvarchar" MaxLength="128" />
+    <Property Name="Province_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="District" Type="nvarchar" MaxLength="128" />
+    <Property Name="District_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="SubDistrict" Type="nvarchar" MaxLength="128" />
+    <Property Name="SubDistrict_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="ZIPcode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ZIPcode_ht" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="128" />
+    <Property Name="Country_ht" Type="nvarchar" MaxLength="128" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_ht" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="InternalPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="128" />
+    <Property Name="BirthPlace" Type="nvarchar" MaxLength="256" />
+    <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Race" Type="nvarchar" MaxLength="128" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="128" />
+    <Property Name="Religion" Type="nvarchar(max)" />
+    <Property Name="BloodType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Appearance" Type="nvarchar" MaxLength="256" />
+    <Property Name="Earmark" Type="nvarchar" MaxLength="256" />
+    <Property Name="email" Type="nvarchar" MaxLength="256" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="256" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="256" />
+    <Property Name="Instragram" Type="nvarchar" MaxLength="256" />
+    <Property Name="LineID" Type="nvarchar" MaxLength="256" />
+    <Property Name="MilitaryStatus" Type="nvarchar" MaxLength="256" />
+    <Property Name="CongenitalDisease" Type="nvarchar" MaxLength="256" />
+    <Property Name="Remark" Type="nvarchar(max)" />
+    <Property Name="Hobby" Type="nvarchar" MaxLength="256" />
+    <Property Name="Sport" Type="nvarchar" MaxLength="256" />
+    <Property Name="Smoking" Type="bit" Nullable="false" />
+    <Property Name="Typewriter" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverLicense" Type="nvarchar" MaxLength="50" />
+    <Property Name="MotorcycleDriverLicense" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToeicScore" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ToeflScore" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountBank" Type="nvarchar" MaxLength="256" />
+    <Property Name="ForeignerStatus" Type="bit" Nullable="false" />
+    <Property Name="FamilyStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="DirectorID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="EmpStatus" Type="char" MaxLength="1" />
+    <Property Name="TitleTHDisplay" Type="nvarchar" MaxLength="128" />
+    <Property Name="TitleENDisplay" Type="nvarchar" MaxLength="128" />
+    <Property Name="PositionEN" Type="nvarchar(max)" />
+    <Property Name="TelIN" Type="nvarchar" MaxLength="128" />
+    <Property Name="DepartmentEN" Type="nvarchar(max)" />
+    <Property Name="SectorEN" Type="nvarchar(max)" />
+    <Property Name="SectorENID" Type="int" />
+    <Property Name="DepartmentID" Type="int" />
+  </EntityType>
+  <EntityType Name="EmployeeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeTypeTH" Type="nvarchar" MaxLength="128" />
+    <Property Name="EmployeeTypeEN" Type="nvarchar" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="FingerScan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SLRI_ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="CardID" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClockIn" Type="time" Precision="7" />
+    <Property Name="ClockOut" Type="time" Precision="7" />
+    <Property Name="Date" Type="date" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="FPLogReport">
+    <Key>
+      <PropertyRef Name="FLRID" />
+    </Key>
+    <Property Name="FLRID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SeqNo" Type="int" />
+    <Property Name="FPSID" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeviceId" Type="int" />
+    <Property Name="UCRID" Type="nvarchar" MaxLength="100" />
+    <Property Name="DIN" Type="int" />
+    <Property Name="FPStatus" Type="nvarchar" MaxLength="255" />
+    <Property Name="FPRecord" Type="datetime" />
+    <Property Name="isActive" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemNote" Type="nvarchar" MaxLength="2000" />
+    <Property Name="UsrTxt1" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt3" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt4" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrNum1" Type="int" />
+    <Property Name="UsrNum2" Type="int" />
+    <Property Name="UsrNum3" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="UsrNum4" Type="float" />
+    <Property Name="MadBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="MadDate" Type="datetime" />
+    <Property Name="ModBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Holidays">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HolidayDate" Type="date" />
+    <Property Name="HolidayEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="HolidayTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="HolidayType" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="HRTimeLeave">
+    <Key>
+      <PropertyRef Name="HRTMID" />
+    </Key>
+    <Property Name="HRTMID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DocDate" Type="datetime" />
+    <Property Name="Title" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ToWhom" Type="nvarchar" MaxLength="2000" />
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" />
+    <Property Name="TLTyp" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ItemNote" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TLDateStartTime" Type="time" Precision="7" />
+    <Property Name="TLDateStart" Type="datetime" />
+    <Property Name="TLDateStartEnd" Type="time" Precision="7" />
+    <Property Name="TLDateEnd" Type="datetime" />
+    <Property Name="TLDayTotal" Type="int" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Country" Type="nvarchar" MaxLength="1000" />
+    <Property Name="City" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="LeaveDate" Type="int" />
+    <Property Name="DuteTo" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Attachment" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TravelBy" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LicensePlate" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TravelingCompanion" Type="int" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="EmpActionName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="EmpAddress" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Mobile" Type="varchar" MaxLength="500" />
+    <Property Name="ApproveStatus" Type="varchar" MaxLength="500" />
+    <Property Name="ApproveNote" Type="varchar" MaxLength="2000" />
+    <Property Name="ApproverBy" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ApproverPosition" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ApproverDate" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="JAComments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="commentDetails" Type="nvarchar" MaxLength="1000" />
+    <Property Name="commentType" Type="nvarchar" MaxLength="10" />
+    <Property Name="commentStatus" Type="nvarchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdIP" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="JAControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+    <Property Name="jaStatus" Type="nvarchar" MaxLength="10" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAManagerFlowApprove">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mangerEmpID" Type="nvarchar" MaxLength="128" />
+    <Property Name="firstNameTH" Type="nvarchar(max)" />
+    <Property Name="depID" Type="int" />
+    <Property Name="department" Type="nvarchar(max)" />
+    <Property Name="mangerLV0ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="mangerLV0FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV0LastName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV1ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="mangerLV1FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV1LastName" Type="nvarchar" MaxLength="200" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="JAMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+    <Property Name="masterEmpId" Type="int" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="200" />
+    <Property Name="education" Type="nvarchar" MaxLength="500" />
+    <Property Name="major" Type="nvarchar" MaxLength="500" />
+    <Property Name="experience" Type="ntext" />
+    <Property Name="empPosition" Type="nvarchar" MaxLength="500" />
+    <Property Name="empSection" Type="nvarchar" MaxLength="500" />
+    <Property Name="empDepartment" Type="nvarchar" MaxLength="500" />
+    <Property Name="JACreatedDate" Type="datetime" />
+    <Property Name="JobPurpose" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="keyResponsibilitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="secondaryActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="otherActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="extraWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="competenciesKnowledge" Type="ntext" />
+    <Property Name="competenciesSkill" Type="ntext" />
+    <Property Name="competenciesAbilities" Type="ntext" />
+    <Property Name="other" Type="ntext" />
+    <Property Name="insideDepartment" Type="ntext" />
+    <Property Name="outsideDepartment" Type="ntext" />
+    <Property Name="outsideSLRI" Type="ntext" />
+    <Property Name="submitedDate" Type="datetime" />
+    <Property Name="jaStatus" Type="varchar" MaxLength="10" />
+    <Property Name="submittedDate" Type="datetime" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterExtraDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionExtra" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="directorId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterKeyResponsibilitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="subKeyId" Type="int" />
+    <Property Name="descriptionKey" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="sumSubKey" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isOder" Type="int" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="addSubCheck" Type="char" MaxLength="1" />
+    <Property Name="idRefSub" Type="int" />
+    <Property Name="levelDisplay" Type="int" />
+    <Property Name="directorId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterKPIDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="KPIName" Type="ntext" />
+    <Property Name="KPIDescription" Type="ntext" />
+    <Property Name="KPIGoal" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="directorId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterOtherActivitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionOther" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="directorId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JAMasterSecondaryActivitiesDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jaMasterId" Type="int" />
+    <Property Name="descriptionSecondary" Type="ntext" />
+    <Property Name="goal" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="isStatus" Type="nchar" MaxLength="1" />
+    <Property Name="refId" Type="int" />
+    <Property Name="directorId" Type="int" />
+    <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+    <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jdPosition" Type="nvarchar(max)" />
+    <Property Name="jdDepartment" Type="nvarchar(max)" />
+    <Property Name="jdPurpose" Type="nvarchar(max)" />
+    <Property Name="keyResponsibilities" Type="ntext" />
+    <Property Name="keyResponsibilitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="secondaryActivities" Type="ntext" />
+    <Property Name="secondaryActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="otherActivities" Type="ntext" />
+    <Property Name="otherActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="positionOfDirectSuperior" Type="ntext" />
+    <Property Name="positionOfDirectSubordinate" Type="ntext" />
+    <Property Name="amountOfDirectSubordinate" Type="int" />
+    <Property Name="amountSubordinate" Type="int" />
+    <Property Name="insideDepartment" Type="ntext" />
+    <Property Name="outsideDepartment" Type="ntext" />
+    <Property Name="outsideSLRI" Type="ntext" />
+    <Property Name="EduBackground" Type="ntext" />
+    <Property Name="major" Type="ntext" />
+    <Property Name="proExp" Type="ntext" />
+    <Property Name="competenciesKnowledge" Type="ntext" />
+    <Property Name="competenciesSkill" Type="ntext" />
+    <Property Name="competenciesAbilities" Type="ntext" />
+    <Property Name="other" Type="ntext" />
+    <Property Name="jdStatus" Type="char" MaxLength="1" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMasterEmp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empId" Type="nvarchar" MaxLength="128" />
+    <Property Name="jdId" Type="int" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+    <Property Name="cretedBy" Type="nvarchar(max)" />
+    <Property Name="cretedDate" Type="datetime" />
+    <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+    <Property Name="updatedBy" Type="nvarchar(max)" />
+    <Property Name="updatedDate" Type="datetime" />
+    <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="JDMasterSub">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="jdMasterId" Type="int" />
+    <Property Name="descriptionSub" Type="ntext" />
+    <Property Name="weight" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="subType" Type="varchar" MaxLength="50" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="KPIYear" Type="int" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="KPIName" Type="ntext" />
+    <Property Name="KPIDetail" Type="ntext" />
+    <Property Name="KPIGoal" Type="ntext" />
+    <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="KPIResult" Type="nvarchar" MaxLength="2000" />
+    <Property Name="KPIScore" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="KPIHeader" Type="int" />
+    <Property Name="isOrder" Type="int" />
+    <Property Name="GoalRang1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang3" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoalRang5" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="KPIStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIJoin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="accountId" Type="int" />
+    <Property Name="percentJoin" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="percentJoinScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="percentWorkload" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="percentWorkloadScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIReport">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIId" Type="int" />
+    <Property Name="reportQuarter" Type="int" />
+    <Property Name="reportResult" Type="nvarchar" MaxLength="1000" />
+    <Property Name="reportScore" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="reportRemark" Type="ntext" />
+    <Property Name="path" Type="nvarchar" MaxLength="1000" />
+    <Property Name="fileName" Type="nvarchar" MaxLength="1000" />
+    <Property Name="fileNameOld" Type="nvarchar" MaxLength="1000" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="cretaedDate" Type="datetime" />
+    <Property Name="reportStatus" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="KPIResponsible">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PercentManagerId" Type="int" />
+    <Property Name="attributeId" Type="int" />
+    <Property Name="KPIYearControlId" Type="int" />
+    <Property Name="employeeId" Type="int" />
+    <Property Name="scoreAttribute" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="ntext" />
+    <Property Name="isActive" Type="char" MaxLength="1" />
+    <Property Name="createdBy" Type="int" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="updatedBy" Type="int" />
+    <Property Name="updatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterKPIType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="groupKPI" Type="int" />
+    <Property Name="KPITypeDetail" Type="nvarchar(max)" />
+    <Property Name="KPITypeYear" Type="nvarchar" MaxLength="4" />
+    <Property Name="KPITypeStatus" Type="char" MaxLength="1" />
+    <Property Name="isOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="masterKPITypeSub">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubDetail" Type="nvarchar(max)" />
+    <Property Name="KPITypeSubStatus" Type="char" MaxLength="1" />
+    <Property Name="isOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="masterKPIYear">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIYearDetail" Type="nvarchar" MaxLength="10" />
+    <Property Name="KPIYearStatus" Type="char" MaxLength="1" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterKPIYearControl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPIYearId" Type="int" />
+    <Property Name="KPIQuarterId" Type="int" />
+    <Property Name="KPIDetail" Type="nvarchar" MaxLength="1000" />
+    <Property Name="KPIStatus" Type="char" MaxLength="1" />
+    <Property Name="StatusLV1Evaluated" Type="char" MaxLength="1" />
+    <Property Name="StatusLV2Evaluated" Type="char" MaxLength="1" />
+    <Property Name="createdDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="masterProject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="KPIYear" Type="int" />
+    <Property Name="projectName" Type="ntext" />
+    <Property Name="projectHeader" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Overtime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="WorkDate" Type="date" />
+    <Property Name="Working" Type="nvarchar" MaxLength="50" />
+    <Property Name="Payment" Type="nvarchar" MaxLength="50" />
+    <Property Name="OT_Type" Type="nvarchar" MaxLength="128" />
+    <Property Name="SupervisorApproved" Type="nvarchar" MaxLength="50" />
+    <Property Name="Supervisor" Type="nvarchar" MaxLength="128" />
+    <Property Name="SupervisorNote" Type="nvarchar(max)" />
+    <Property Name="HeadApproved" Type="nvarchar" MaxLength="50" />
+    <Property Name="Head" Type="nvarchar" MaxLength="128" />
+    <Property Name="HeadNote" Type="nvarchar(max)" />
+    <Property Name="Operator" Type="nvarchar" MaxLength="128" />
+    <Property Name="OperationTime" Type="time" Precision="7" />
+    <Property Name="HR" Type="nvarchar" MaxLength="128" />
+    <Property Name="HRApproved" Type="nvarchar" MaxLength="128" />
+    <Property Name="HRNote" Type="nvarchar(max)" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="FromTime" Type="time" Precision="7" />
+    <Property Name="ToTime" Type="time" Precision="7" />
+    <Property Name="s1" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="s2" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="s3" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PerfomedNote" Type="nvarchar(max)" />
+    <Property Name="Types" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="OvertimeDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OvertimeID" Type="int" Nullable="false" />
+    <Property Name="WorkDate" Type="date" />
+    <Property Name="StartTime" Type="time" Precision="7" />
+    <Property Name="EndTime" Type="time" Precision="7" />
+    <Property Name="FirstTotal" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="OverTotal" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Issue" Type="nvarchar(max)" />
+    <Property Name="Cause" Type="nvarchar(max)" />
+    <Property Name="ProblemSolving" Type="nvarchar(max)" />
+    <Property Name="Performance" Type="nvarchar(max)" />
+    <Property Name="Types" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PositionTH" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="PositionEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Upright" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Provinces">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="NameInThai" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="NameInEnglish" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subdistricts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="NameInThai" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="NameInEnglish" Type="nvarchar" MaxLength="150" />
+    <Property Name="Latitude" Type="decimal" Precision="6" Scale="3" Nullable="false" />
+    <Property Name="Longitude" Type="decimal" Precision="6" Scale="3" Nullable="false" />
+    <Property Name="DistrictId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="sysFPStataion">
+    <Key>
+      <PropertyRef Name="FPSID" />
+    </Key>
+    <Property Name="FPSID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SeqNo" Type="int" />
+    <Property Name="DeviceId" Type="int" />
+    <Property Name="DevicePWD" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeviceModel" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeviceComMode" Type="int" />
+    <Property Name="IpAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="IpPort" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeviceComType" Type="int" />
+    <Property Name="isActive" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemNote" Type="nvarchar" MaxLength="2000" />
+    <Property Name="UsrTxt1" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt3" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt4" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrNum1" Type="int" />
+    <Property Name="UsrNum2" Type="int" />
+    <Property Name="UsrNum3" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="UsrNum4" Type="float" />
+    <Property Name="MadBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="MadDate" Type="datetime" />
+    <Property Name="ModBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysUserCardRegister">
+    <Key>
+      <PropertyRef Name="UCRID" />
+    </Key>
+    <Property Name="UCRID" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SeqNo" Type="int" />
+    <Property Name="FPSID" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeviceId" Type="int" />
+    <Property Name="DIN" Type="int" />
+    <Property Name="UserCardID" Type="nvarchar" MaxLength="255" />
+    <Property Name="isActive" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemNote" Type="nvarchar" MaxLength="2000" />
+    <Property Name="UsrTxt1" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt2" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt3" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrTxt4" Type="nvarchar" MaxLength="255" />
+    <Property Name="UsrNum1" Type="int" />
+    <Property Name="UsrNum2" Type="int" />
+    <Property Name="UsrNum3" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="UsrNum4" Type="float" />
+    <Property Name="MadBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="MadDate" Type="datetime" />
+    <Property Name="ModBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="ModDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FullTitle" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEN" Type="nvarchar" MaxLength="256" />
+    <Property Name="Abbreviated" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="TransactionKPIDisplay">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yid" Type="int" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="SubGroupId" Type="int" />
+    <Property Name="KPITypeId" Type="int" />
+    <Property Name="KPITypeSubId" Type="int" />
+    <Property Name="isActive" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Card" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Workplace">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="WorkplaceTH" Type="nvarchar" MaxLength="128" />
+    <Property Name="WorkplaceEN" Type="nvarchar" MaxLength="128" />
+    <Property Name="Address" Type="nvarchar" MaxLength="128" />
+    <Property Name="ProvinceID" Type="int" />
+    <Property Name="DistrictID" Type="int" />
+    <Property Name="SubDistrictID" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.Z_Departmant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Z_Departmant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="idDepRef" Type="int" />
+    <Property Name="idDepRefCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="DepartmantNameTh" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DepartmantNameEn" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HRIS.dbo.Z_Division' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Z_Division">
+          <Property Name="id" Type="int" />
+          <Property Name="idDivRefid" Type="int" />
+          <Property Name="idDivRefCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="DivisionNameTh" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DivisionNameEn" Type="nvarchar" MaxLength="1000" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.Z_EmpData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Z_EmpData">
+    <Key>
+      <PropertyRef Name="EmpID" />
+      <PropertyRef Name="SLRI_ID" />
+    </Key>
+    <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SLRI_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CardID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="FirstNameTH" Type="nvarchar" MaxLength="256" />
+    <Property Name="DirectorID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.Z_EmpEn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Z_EmpEn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TitleEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FirstNameEn" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LastnameEn" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="DivisionEn" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PositionEn" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Email" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.Z_EmpTh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Z_EmpTh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Fullname" Type="nvarchar(max)" />
+    <Property Name="FirstnameTh" Type="nvarchar(max)" />
+    <Property Name="LastnameTh" Type="nvarchar(max)" />
+    <Property Name="DepartmentCode" Type="int" />
+    <Property Name="DepartmentTh" Type="nvarchar(max)" />
+    <Property Name="DivisionCode" Type="int" />
+    <Property Name="DivisionTh" Type="nvarchar(max)" />
+    <Property Name="PosisionTh" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="TelIn" Type="nvarchar" MaxLength="100" />
+    <Property Name="isOder" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.View_JAManagerFlowApprove' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_JAManagerFlowApprove">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="mangerEmpID" Type="nvarchar" MaxLength="128" />
+    <Property Name="firstNameTH" Type="nvarchar(max)" />
+    <Property Name="depID" Type="int" />
+    <Property Name="department" Type="nvarchar(max)" />
+    <Property Name="Expr1" Type="int" />
+    <Property Name="Expr2" Type="nvarchar" MaxLength="128" />
+    <Property Name="ManagerNameLV2" Type="nvarchar" MaxLength="770" />
+    <Property Name="mangerLV1ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="ManagerNameLV1" Type="nvarchar" MaxLength="770" />
+    <Property Name="mangerLV0ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="ManagerNameLV0" Type="nvarchar" MaxLength="770" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HRIS.dbo.View_ManagerViewJADetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ManagerViewJADetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+    <Property Name="masterEmpId" Type="int" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="200" />
+    <Property Name="empPosition" Type="nvarchar" MaxLength="500" />
+    <Property Name="empSection" Type="nvarchar" MaxLength="500" />
+    <Property Name="empDepartment" Type="nvarchar" MaxLength="500" />
+    <Property Name="jaStatus" Type="varchar" MaxLength="10" />
+    <Property Name="empId" Type="nvarchar" MaxLength="128" />
+    <Property Name="jdId" Type="int" />
+    <Property Name="mangerEmpID" Type="nvarchar" MaxLength="128" />
+    <Property Name="ManagerName" Type="nvarchar(max)" />
+    <Property Name="mangerLV0ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="mangerLV0FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV0LastName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV1ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="mangerLV1FirstName" Type="nvarchar" MaxLength="200" />
+    <Property Name="mangerLV1LastName" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_dbo_UserClaim_dbo_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserClaim" Type="Self.UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserLogin_dbo_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserRole_dbo_Role_RoleId">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserRole_dbo_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Department">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+    <End Role="Departments1" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Departments1">
+        <PropertyRef Name="Upright" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_Provinces">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="1" />
+    <End Role="Districts" Type="Self.Districts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Districts">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeContact_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="EmployeeContact" Type="Self.EmployeeContact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeContact">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeDep_EmployeeDep">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="EmployeeDep" Type="Self.EmployeeDep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeDep">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEDU_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="EmployeeEDU" Type="Self.EmployeeEDU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeEDU">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeFamily_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="EmployeeFamily" Type="Self.EmployeeFamily" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeeFamily">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePosition_Employees1">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="EmployeePosition" Type="Self.EmployeePosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="EmployeePosition">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FingerScan_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="FingerScan" Type="Self.FingerScan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="FingerScan">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HRTimeLeave_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="HRTimeLeave" Type="Self.HRTimeLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="HRTimeLeave">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Overtime_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+    <End Role="Overtime" Type="Self.Overtime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="Overtime">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OvertimeDetails_Overtime">
+    <End Role="Overtime" Type="Self.Overtime" Multiplicity="1" />
+    <End Role="OvertimeDetails" Type="Self.OvertimeDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Overtime">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OvertimeDetails">
+        <PropertyRef Name="OvertimeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Positions_Positions">
+    <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
+    <End Role="Positions1" Type="Self.Positions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Positions1">
+        <PropertyRef Name="Upright" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subdistricts_Districts">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="1" />
+    <End Role="Subdistricts" Type="Self.Subdistricts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subdistricts">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmpID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="EmpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workplace_Districts">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="0..1" />
+    <End Role="Workplace" Type="Self.Workplace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Workplace">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workplace_Provinces">
+    <End Role="Provinces" Type="Self.Provinces" Multiplicity="0..1" />
+    <End Role="Workplace" Type="Self.Workplace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinces">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Workplace">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workplace_Subdistricts">
+    <End Role="Subdistricts" Type="Self.Subdistricts" Multiplicity="0..1" />
+    <End Role="Workplace" Type="Self.Workplace" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subdistricts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Workplace">
+        <PropertyRef Name="SubDistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRISModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactType" EntityType="Self.ContactType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Districts" EntityType="Self.Districts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeContact" EntityType="Self.EmployeeContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeDep" EntityType="Self.EmployeeDep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeEDU" EntityType="Self.EmployeeEDU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeFamily" EntityType="Self.EmployeeFamily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeLevel" EntityType="Self.EmployeeLevel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeePosition" EntityType="Self.EmployeePosition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeType" EntityType="Self.EmployeeType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FingerScan" EntityType="Self.FingerScan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FPLogReport" EntityType="Self.FPLogReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Holidays" EntityType="Self.Holidays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HRTimeLeave" EntityType="Self.HRTimeLeave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAComments" EntityType="Self.JAComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAControl" EntityType="Self.JAControl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAManagerFlowApprove" EntityType="Self.JAManagerFlowApprove" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMaster" EntityType="Self.JAMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterExtraDetail" EntityType="Self.JAMasterExtraDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterKeyResponsibilitiesDetail" EntityType="Self.JAMasterKeyResponsibilitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterKPIDetail" EntityType="Self.JAMasterKPIDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterOtherActivitiesDetail" EntityType="Self.JAMasterOtherActivitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JAMasterSecondaryActivitiesDetail" EntityType="Self.JAMasterSecondaryActivitiesDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMaster" EntityType="Self.JDMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMasterEmp" EntityType="Self.JDMasterEmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JDMasterSub" EntityType="Self.JDMasterSub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPI" EntityType="Self.KPI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIJoin" EntityType="Self.KPIJoin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIReport" EntityType="Self.KPIReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KPIResponsible" EntityType="Self.KPIResponsible" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIType" EntityType="Self.masterKPIType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPITypeSub" EntityType="Self.masterKPITypeSub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIYear" EntityType="Self.masterKPIYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterKPIYearControl" EntityType="Self.masterKPIYearControl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masterProject" EntityType="Self.masterProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Overtime" EntityType="Self.Overtime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OvertimeDetails" EntityType="Self.OvertimeDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provinces" EntityType="Self.Provinces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subdistricts" EntityType="Self.Subdistricts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysFPStataion" EntityType="Self.sysFPStataion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysUserCardRegister" EntityType="Self.sysUserCardRegister" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionKPIDisplay" EntityType="Self.TransactionKPIDisplay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserClaim" EntityType="Self.UserClaim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workplace" EntityType="Self.Workplace" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Z_Departmant" EntityType="Self.Z_Departmant" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Z_Departmant].[id] AS [id], 
+    [Z_Departmant].[idDepRef] AS [idDepRef], 
+    [Z_Departmant].[idDepRefCode] AS [idDepRefCode], 
+    [Z_Departmant].[DepartmantNameTh] AS [DepartmantNameTh], 
+    [Z_Departmant].[DepartmantNameEn] AS [DepartmantNameEn]
+    FROM [dbo].[Z_Departmant] AS [Z_Departmant]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Z_EmpData" EntityType="Self.Z_EmpData" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Z_EmpData].[EmpID] AS [EmpID], 
+    [Z_EmpData].[SLRI_ID] AS [SLRI_ID], 
+    [Z_EmpData].[CardID] AS [CardID], 
+    [Z_EmpData].[Position] AS [Position], 
+    [Z_EmpData].[FirstNameTH] AS [FirstNameTH], 
+    [Z_EmpData].[DirectorID] AS [DirectorID]
+    FROM [dbo].[Z_EmpData] AS [Z_EmpData]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Z_EmpEn" EntityType="Self.Z_EmpEn" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Z_EmpEn].[id] AS [id], 
+    [Z_EmpEn].[TitleEn] AS [TitleEn], 
+    [Z_EmpEn].[Fullname] AS [Fullname], 
+    [Z_EmpEn].[FirstNameEn] AS [FirstNameEn], 
+    [Z_EmpEn].[LastnameEn] AS [LastnameEn], 
+    [Z_EmpEn].[DepartmentId] AS [DepartmentId], 
+    [Z_EmpEn].[DivisionEn] AS [DivisionEn], 
+    [Z_EmpEn].[PositionEn] AS [PositionEn], 
+    [Z_EmpEn].[Email] AS [Email], 
+    [Z_EmpEn].[Tel] AS [Tel]
+    FROM [dbo].[Z_EmpEn] AS [Z_EmpEn]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Z_EmpTh" EntityType="Self.Z_EmpTh" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Z_EmpTh].[id] AS [id], 
+    [Z_EmpTh].[Title] AS [Title], 
+    [Z_EmpTh].[Fullname] AS [Fullname], 
+    [Z_EmpTh].[FirstnameTh] AS [FirstnameTh], 
+    [Z_EmpTh].[LastnameTh] AS [LastnameTh], 
+    [Z_EmpTh].[DepartmentCode] AS [DepartmentCode], 
+    [Z_EmpTh].[DepartmentTh] AS [DepartmentTh], 
+    [Z_EmpTh].[DivisionCode] AS [DivisionCode], 
+    [Z_EmpTh].[DivisionTh] AS [DivisionTh], 
+    [Z_EmpTh].[PosisionTh] AS [PosisionTh], 
+    [Z_EmpTh].[Email] AS [Email], 
+    [Z_EmpTh].[TelIn] AS [TelIn], 
+    [Z_EmpTh].[isOder] AS [isOder]
+    FROM [dbo].[Z_EmpTh] AS [Z_EmpTh]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_JAManagerFlowApprove" EntityType="Self.View_JAManagerFlowApprove" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_JAManagerFlowApprove].[id] AS [id], 
+    [View_JAManagerFlowApprove].[mangerEmpID] AS [mangerEmpID], 
+    [View_JAManagerFlowApprove].[firstNameTH] AS [firstNameTH], 
+    [View_JAManagerFlowApprove].[depID] AS [depID], 
+    [View_JAManagerFlowApprove].[department] AS [department], 
+    [View_JAManagerFlowApprove].[Expr1] AS [Expr1], 
+    [View_JAManagerFlowApprove].[Expr2] AS [Expr2], 
+    [View_JAManagerFlowApprove].[ManagerNameLV2] AS [ManagerNameLV2], 
+    [View_JAManagerFlowApprove].[mangerLV1ID] AS [mangerLV1ID], 
+    [View_JAManagerFlowApprove].[ManagerNameLV1] AS [ManagerNameLV1], 
+    [View_JAManagerFlowApprove].[mangerLV0ID] AS [mangerLV0ID], 
+    [View_JAManagerFlowApprove].[ManagerNameLV0] AS [ManagerNameLV0]
+    FROM [dbo].[View_JAManagerFlowApprove] AS [View_JAManagerFlowApprove]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ManagerViewJADetail" EntityType="Self.View_ManagerViewJADetail" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_ManagerViewJADetail].[id] AS [id], 
+    [View_ManagerViewJADetail].[jaYear] AS [jaYear], 
+    [View_ManagerViewJADetail].[masterEmpId] AS [masterEmpId], 
+    [View_ManagerViewJADetail].[fullname] AS [fullname], 
+    [View_ManagerViewJADetail].[empPosition] AS [empPosition], 
+    [View_ManagerViewJADetail].[empSection] AS [empSection], 
+    [View_ManagerViewJADetail].[empDepartment] AS [empDepartment], 
+    [View_ManagerViewJADetail].[jaStatus] AS [jaStatus], 
+    [View_ManagerViewJADetail].[empId] AS [empId], 
+    [View_ManagerViewJADetail].[jdId] AS [jdId], 
+    [View_ManagerViewJADetail].[mangerEmpID] AS [mangerEmpID], 
+    [View_ManagerViewJADetail].[ManagerName] AS [ManagerName], 
+    [View_ManagerViewJADetail].[mangerLV0ID] AS [mangerLV0ID], 
+    [View_ManagerViewJADetail].[mangerLV0FirstName] AS [mangerLV0FirstName], 
+    [View_ManagerViewJADetail].[mangerLV0LastName] AS [mangerLV0LastName], 
+    [View_ManagerViewJADetail].[mangerLV1ID] AS [mangerLV1ID], 
+    [View_ManagerViewJADetail].[mangerLV1FirstName] AS [mangerLV1FirstName], 
+    [View_ManagerViewJADetail].[mangerLV1LastName] AS [mangerLV1LastName]
+    FROM [dbo].[View_ManagerViewJADetail] AS [View_ManagerViewJADetail]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_dbo_UserClaim_dbo_User_UserId" Association="Self.FK_dbo_UserClaim_dbo_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserClaim" EntitySet="UserClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserLogin_dbo_User_UserId" Association="Self.FK_dbo_UserLogin_dbo_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserRole_dbo_Role_RoleId" Association="Self.FK_dbo_UserRole_dbo_Role_RoleId">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserRole_dbo_User_UserId" Association="Self.FK_dbo_UserRole_dbo_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Department" Association="Self.FK_Department_Department">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Departments1" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_Provinces" Association="Self.FK_Districts_Provinces">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="Districts" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeContact_Employees" Association="Self.FK_EmployeeContact_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeContact" EntitySet="EmployeeContact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeDep_EmployeeDep" Association="Self.FK_EmployeeDep_EmployeeDep">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeDep" EntitySet="EmployeeDep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEDU_Employees" Association="Self.FK_EmployeeEDU_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeEDU" EntitySet="EmployeeEDU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeFamily_Employees" Association="Self.FK_EmployeeFamily_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeFamily" EntitySet="EmployeeFamily" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePosition_Employees1" Association="Self.FK_EmployeePosition_Employees1">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeePosition" EntitySet="EmployeePosition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FingerScan_Employees" Association="Self.FK_FingerScan_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="FingerScan" EntitySet="FingerScan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HRTimeLeave_Employees" Association="Self.FK_HRTimeLeave_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="HRTimeLeave" EntitySet="HRTimeLeave" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Overtime_Employees" Association="Self.FK_Overtime_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Overtime" EntitySet="Overtime" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OvertimeDetails_Overtime" Association="Self.FK_OvertimeDetails_Overtime">
+      <End Role="Overtime" EntitySet="Overtime" />
+      <End Role="OvertimeDetails" EntitySet="OvertimeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Positions_Positions" Association="Self.FK_Positions_Positions">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="Positions1" EntitySet="Positions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subdistricts_Districts" Association="Self.FK_Subdistricts_Districts">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Subdistricts" EntitySet="Subdistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Employees" Association="Self.FK_User_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workplace_Districts" Association="Self.FK_Workplace_Districts">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Workplace" EntitySet="Workplace" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workplace_Provinces" Association="Self.FK_Workplace_Provinces">
+      <End Role="Provinces" EntitySet="Provinces" />
+      <End Role="Workplace" EntitySet="Workplace" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workplace_Subdistricts" Association="Self.FK_Workplace_Subdistricts">
+      <End Role="Subdistricts" EntitySet="Subdistricts" />
+      <End Role="Workplace" EntitySet="Workplace" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

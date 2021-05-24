@@ -1,0 +1,128 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@Styles.Render("~/Content/StyleSheet1.css")
+@{
+    var jaMasterId = ViewBag.jaMasterId;
+    var subKeyId = ViewBag.subKeyId;
+    var edit = (JAMasterSecondaryActivitiesDetail)ViewData["SecondaryListEdit"];
+}
+<div>
+    <h2><b>แก้ไขหน้าที่รอง/กิจกรรมรอง (Secondary Activities)</b></h2><br />
+    @using (Html.BeginForm("Edit_Secondary", "JobAssignment", new { id = subKeyId }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <table class="styled-table-1">
+
+            <tr>
+                <td align="right" bgcolor="#256080" style="color:#ffffff">
+                    <label class="col-form-label">รายละเอียด:</label>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                    <textarea name="taSecDetails" id="taSecDetails" style="width:400px;height:68px" required>
+                        @edit.descriptionSecondary
+                    </textarea>
+                    <br /><br />
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" bgcolor="#357496" style="color:#ffffff">
+                    <label class="col-form-label">เป้าหมาย:</label>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                    <textarea name="taSecGoal" id="taSecGoal" style="width:400px;height:68px" required>@edit.goal</textarea>
+                    <br /><br />
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" bgcolor="#256080" style="color:#ffffff">
+                    <label class="col-form-label">ผู้ร่วมงาน:</label>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                    @*@Html.DropDownList("firstNameTH", ViewBag.ddljaManager as SelectList, "--------", new { style = "width:150px" })*@
+
+                    <select name="firstNameTH" id="firstNameTH">
+                        <option value="@edit.directorId">@ViewBag.managerDefault</option>
+                        <option value="6">นาง กนกพร ไผ่นาค</option>
+                        <option value="35">นาง กาญจนา ธรรมนู</option>
+                        <option value="22">นาย เกริกฤทธิ์ สิทธิศาสตร์</option>
+                        <option value="4">นางสาว ขนิษฐา กุลประจวบ</option>
+                        <option value="30">นาง แคทลียา โรจน์วิริยะ</option>
+                        <option value="37">นาง ชมภูนุช ส่งสิริฤทธิกุล</option>
+                        <option value="3">นางสาว ชลดา ขานด่อน</option>
+                        <option value="5">นาง ชุรินธร เนติ</option>
+                        <option value="9">นาย ฐาปกรณ์ ภู่ลำพงษ์</option>
+                        <option value="27">นาย ณรงค์ จันทร์เล็ก</option>
+                        <option value="1">นาง ณัฏฐกานต์ ประเสริฐศรี</option>
+                        <option value="13">นาย ณัฐพล สุมะโน</option>
+                        <option value="25">นาย เด่นชาย บำรุงเกาะ</option>
+                        <option value="24">นาย บอมเบย์ บุ่นวรรณา</option>
+                        <option value="40">นาย ประพงษ์ คล้ายสุบรรณ์</option>
+                        <option value="7">นางสาว ประไพวรรณ สันวงศ์</option>
+                        <option value="16">นางสาว ผกามาศ เครือศรี</option>
+                        <option value="31">นาย พัฒน์ โพธิ์ทองคำ</option>
+                        <option value="28">นาย พัฒนพงศ์ จันทร์พวง</option>
+                        <option value="29">นาย พินิจ กิจขุนทด</option>
+                        <option value="33">นางสาว แพร จิรวัฒน์กุล</option>
+                        <option value="39">นาย เมธี โสภณ</option>
+                        <option value="36">นาย ยิ่งยศ ภู่อาภรณ์</option>
+                        <option value="21">นาง ระวีวรรณ เลิศสุขสมบัติ</option>
+                        <option value="2">นางสาว รุ่งทิพย์ ไวปัญญา</option>
+                        <option value="26">นาง วันทนา คล้ายสุบรรณ์</option>
+                        <option value="11">นาย วิเวก ภาชีรักษ์</option>
+                        <option value="8">นาย วิศิษฎ์ชัย สุขศรีเมือง</option>
+                        <option value="19">นาย ศรายุทธ ตั้นมี</option>
+                        <option value="17">นางสาว ศศิพันธุ์ ไตรทาน</option>
+                        <option value="32">นาย ศิริวัช สุนทรานนท์</option>
+                        <option value="38">นาย ศุภกร รักใหม่</option>
+                        <option value="23">นาย สกลกวี ปราบงูเหลือม</option>
+                        <option value="12">นางสาว สมใจ ชื่นเจริญ</option>
+                        <option value="42">นาย สมชาย ตันชรากรณ์</option>
+                        <option value="18">นาง สมหมาย แช่มภุชา</option>
+                        <option value="43">รศ.ดร. สาโรช รุจิรวรรธน์</option>
+                        <option value="15">นาย สำเริง ด้วงนิล</option>
+                        <option value="20">นาย สุทธิพงษ์ วรรณไพบูลย์</option>
+                        <option value="10">นาย สุพัฒน์ กลิ่นเขียว</option>
+                        <option value="14">นางสาว อธิการ ทองวัฒน์</option>
+                        <option value="41">นางสาว อริญา ลาภโคกสูง</option>
+                        <option value="34">นาย ฮิเดกิ นากาจิม่า</option>
+                    </select>
+                    <br /><br />
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right" bgcolor="#357496" style="color:#ffffff">
+                    <label class="col-form-label">น้ำหนัก:</label>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="number" step="0.01" name="txtSecWeight" id="txtSecWeight" style="width:75px" value="@edit.weight" required />
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td bgcolor="#256080" style="color:#ffffff">
+                </td>
+                <td align="right">
+                    <div>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="history.go(-1); return false;" href="#">Cancel</button>
+                        <button type="submit" class="btn btn-primary">OK</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+    }
+</div>
+
+
+
+

@@ -1,0 +1,1798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HRIS.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Department" Type="nvarchar" MaxLength="256" />
+          <Property Name="Section" Type="nvarchar" MaxLength="256" />
+          <Property Name="Position" Type="nvarchar" MaxLength="256" />
+          <Property Name="DateWorkStart" Type="datetime" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="Password" Type="nvarchar" MaxLength="64" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserType" Type="char" MaxLength="1" />
+          <Property Name="UserStatus" Type="char" MaxLength="1" />
+          <Property Name="LoginDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AccountJD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountId" Type="nvarchar" MaxLength="128" />
+          <Property Name="jdId" Type="int" />
+          <Property Name="yearId" Type="int" />
+          <Property Name="isStatus" Type="char" MaxLength="1" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="accountManager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountId" Type="int" />
+          <Property Name="managerIdLevel1" Type="int" />
+          <Property Name="managerIdLevel2" Type="int" />
+          <Property Name="isStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="SLRI_ID" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="CardID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Orders" Type="int" />
+          <Property Name="FirstNameTH" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastNameTH" Type="nvarchar" MaxLength="256" />
+          <Property Name="FirstNameEN" Type="nvarchar" MaxLength="256" />
+          <Property Name="MiddleNameEN" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastNameEN" Type="nvarchar" MaxLength="256" />
+          <Property Name="TitleTH" Type="nvarchar" MaxLength="256" />
+          <Property Name="TitleEN" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmployeeLevelID" Type="nvarchar" MaxLength="128" />
+          <Property Name="EmployeeLevel" Type="nvarchar" MaxLength="256" />
+          <Property Name="DepID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Department" Type="nvarchar" MaxLength="256" />
+          <Property Name="SectorID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="256" />
+          <Property Name="Position" Type="nvarchar" MaxLength="256" />
+          <Property Name="ReportPosition" Type="nvarchar" MaxLength="256" />
+          <Property Name="ContractID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Contract" Type="nvarchar" MaxLength="256" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonalID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SocialSecurity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Taxpayer" Type="nvarchar" MaxLength="50" />
+          <Property Name="FundNo" Type="nvarchar" MaxLength="128" />
+          <Property Name="PassportID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Stafflevel" Type="nvarchar" MaxLength="256" />
+          <Property Name="StaffType" Type="nvarchar" MaxLength="256" />
+          <Property Name="SWD" Type="date" />
+          <Property Name="GWD" Type="date" />
+          <Property Name="Pic" Type="nvarchar" MaxLength="256" />
+          <Property Name="WageCalculation" Type="nvarchar" MaxLength="256" />
+          <Property Name="HouseNo" Type="nvarchar" MaxLength="256" />
+          <Property Name="HouseNo_ht" Type="nvarchar" MaxLength="256" />
+          <Property Name="Building" Type="nvarchar" MaxLength="256" />
+          <Property Name="Building_ht" Type="nvarchar" MaxLength="256" />
+          <Property Name="Soi" Type="nvarchar" MaxLength="128" />
+          <Property Name="Soi_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="Street" Type="nvarchar" MaxLength="128" />
+          <Property Name="Street_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="Province" Type="nvarchar" MaxLength="128" />
+          <Property Name="Province_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="District" Type="nvarchar" MaxLength="128" />
+          <Property Name="District_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="SubDistrict" Type="nvarchar" MaxLength="128" />
+          <Property Name="SubDistrict_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="ZIPcode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ZIPcode_ht" Type="nvarchar" MaxLength="10" />
+          <Property Name="Country" Type="nvarchar" MaxLength="128" />
+          <Property Name="Country_ht" Type="nvarchar" MaxLength="128" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_ht" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="InternalPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="128" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="256" />
+          <Property Name="Height" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Weight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Race" Type="nvarchar" MaxLength="128" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="128" />
+          <Property Name="Religion" Type="nvarchar(max)" />
+          <Property Name="BloodType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Appearance" Type="nvarchar" MaxLength="256" />
+          <Property Name="Earmark" Type="nvarchar" MaxLength="256" />
+          <Property Name="email" Type="nvarchar" MaxLength="256" />
+          <Property Name="WebSite" Type="nvarchar" MaxLength="256" />
+          <Property Name="Facebook" Type="nvarchar" MaxLength="256" />
+          <Property Name="Instragram" Type="nvarchar" MaxLength="256" />
+          <Property Name="LineID" Type="nvarchar" MaxLength="256" />
+          <Property Name="MilitaryStatus" Type="nvarchar" MaxLength="256" />
+          <Property Name="CongenitalDisease" Type="nvarchar" MaxLength="256" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Hobby" Type="nvarchar" MaxLength="256" />
+          <Property Name="Sport" Type="nvarchar" MaxLength="256" />
+          <Property Name="Smoking" Type="bit" Nullable="false" />
+          <Property Name="Typewriter" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverLicense" Type="nvarchar" MaxLength="50" />
+          <Property Name="MotorcycleDriverLicense" Type="nvarchar" MaxLength="50" />
+          <Property Name="ToeicScore" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ToeflScore" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="AccountNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccountBank" Type="nvarchar" MaxLength="256" />
+          <Property Name="ForeignerStatus" Type="bit" Nullable="false" />
+          <Property Name="FamilyStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="DirectorID" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ModifyBy" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="evaluatePercentManager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yearControlId" Type="int" />
+          <Property Name="empId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="256" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Department" Type="nvarchar" MaxLength="256" />
+          <Property Name="Section" Type="nvarchar" MaxLength="256" />
+          <Property Name="Position" Type="nvarchar" MaxLength="256" />
+          <Property Name="percentKnowledge" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percentAttribute" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isActive" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="JAControl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+          <Property Name="jaStatus" Type="nvarchar" MaxLength="10" />
+          <Property Name="cretedBy" Type="nvarchar(max)" />
+          <Property Name="cretedDate" Type="datetime" />
+          <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+          <Property Name="updatedBy" Type="nvarchar(max)" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAManagerFlowApprove">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mangerEmpID" Type="nvarchar" MaxLength="128" />
+          <Property Name="firstNameTH" Type="nvarchar(max)" />
+          <Property Name="depID" Type="int" />
+          <Property Name="department" Type="nvarchar(max)" />
+          <Property Name="mangerLV0ID" Type="nvarchar" MaxLength="128" />
+          <Property Name="mangerLV0FirstName" Type="nvarchar" MaxLength="200" />
+          <Property Name="mangerLV0LastName" Type="nvarchar" MaxLength="200" />
+          <Property Name="mangerLV1ID" Type="nvarchar" MaxLength="128" />
+          <Property Name="mangerLV1FirstName" Type="nvarchar" MaxLength="200" />
+          <Property Name="mangerLV1LastName" Type="nvarchar" MaxLength="200" />
+          <Property Name="isActive" Type="char" MaxLength="1" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JAMaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaYear" Type="nvarchar" MaxLength="10" />
+          <Property Name="masterEmpId" Type="int" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="200" />
+          <Property Name="education" Type="nvarchar" MaxLength="500" />
+          <Property Name="major" Type="nvarchar" MaxLength="500" />
+          <Property Name="experience" Type="ntext" />
+          <Property Name="empPosition" Type="nvarchar" MaxLength="500" />
+          <Property Name="empSection" Type="nvarchar" MaxLength="500" />
+          <Property Name="empDepartment" Type="nvarchar" MaxLength="500" />
+          <Property Name="JACreatedDate" Type="datetime" />
+          <Property Name="JobPurpose" Type="ntext" />
+          <Property Name="KPIWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="keyResponsibilitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="secondaryActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="otherActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="extraWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="competenciesKnowledge" Type="ntext" />
+          <Property Name="competenciesSkill" Type="ntext" />
+          <Property Name="competenciesAbilities" Type="ntext" />
+          <Property Name="other" Type="ntext" />
+          <Property Name="insideDepartment" Type="ntext" />
+          <Property Name="outsideDepartment" Type="ntext" />
+          <Property Name="outsideSLRI" Type="ntext" />
+          <Property Name="jaStatus" Type="varchar" MaxLength="10" />
+          <Property Name="submittedDate" Type="datetime" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAMasterExtraDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaMasterId" Type="int" />
+          <Property Name="descriptionExtra" Type="ntext" />
+          <Property Name="goal" Type="ntext" />
+          <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="nchar" MaxLength="1" />
+          <Property Name="refId" Type="int" />
+          <Property Name="directorId" Type="int" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAMasterKeyResponsibilitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaMasterId" Type="int" />
+          <Property Name="subKeyId" Type="int" />
+          <Property Name="descriptionKey" Type="ntext" />
+          <Property Name="goal" Type="ntext" />
+          <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="nchar" MaxLength="1" />
+          <Property Name="refId" Type="int" />
+          <Property Name="addSubCheck" Type="char" MaxLength="1" />
+          <Property Name="idRefSub" Type="int" />
+          <Property Name="levelDisplay" Type="int" />
+          <Property Name="directorId" Type="int" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAMasterKPIDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaMasterId" Type="int" />
+          <Property Name="KPIId" Type="int" />
+          <Property Name="KPIName" Type="ntext" />
+          <Property Name="KPIDescription" Type="ntext" />
+          <Property Name="KPIGoal" Type="ntext" />
+          <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="nchar" MaxLength="1" />
+          <Property Name="refId" Type="int" />
+          <Property Name="directorId" Type="int" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAMasterOtherActivitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaMasterId" Type="int" />
+          <Property Name="descriptionOther" Type="ntext" />
+          <Property Name="goal" Type="ntext" />
+          <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="nchar" MaxLength="1" />
+          <Property Name="refId" Type="int" />
+          <Property Name="directorId" Type="int" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JAMasterSecondaryActivitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jaMasterId" Type="int" />
+          <Property Name="descriptionSecondary" Type="ntext" />
+          <Property Name="goal" Type="ntext" />
+          <Property Name="weight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="nchar" MaxLength="1" />
+          <Property Name="refId" Type="int" />
+          <Property Name="directorId" Type="int" />
+          <Property Name="createdBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="createdByIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="updatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JDMaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jdPosition" Type="nvarchar(max)" />
+          <Property Name="jdDepartment" Type="nvarchar(max)" />
+          <Property Name="jdPurpose" Type="nvarchar(max)" />
+          <Property Name="keyResponsibilities" Type="ntext" />
+          <Property Name="keyResponsibilitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="secondaryActivities" Type="ntext" />
+          <Property Name="secondaryActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="otherActivities" Type="ntext" />
+          <Property Name="otherActivitiesWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="positionOfDirectSuperior" Type="ntext" />
+          <Property Name="positionOfDirectSubordinate" Type="ntext" />
+          <Property Name="amountOfDirectSubordinate" Type="int" />
+          <Property Name="amountSubordinate" Type="int" />
+          <Property Name="insideDepartment" Type="ntext" />
+          <Property Name="outsideDepartment" Type="ntext" />
+          <Property Name="outsideSLRI" Type="ntext" />
+          <Property Name="EduBackground" Type="ntext" />
+          <Property Name="major" Type="ntext" />
+          <Property Name="proExp" Type="ntext" />
+          <Property Name="competenciesKnowledge" Type="ntext" />
+          <Property Name="competenciesSkill" Type="ntext" />
+          <Property Name="competenciesAbilities" Type="ntext" />
+          <Property Name="other" Type="ntext" />
+          <Property Name="jdStatus" Type="char" MaxLength="1" />
+          <Property Name="cretedBy" Type="nvarchar(max)" />
+          <Property Name="cretedDate" Type="datetime" />
+          <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+          <Property Name="updatedBy" Type="nvarchar(max)" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JDMasterEmp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="empId" Type="nvarchar" MaxLength="128" />
+          <Property Name="jdId" Type="int" />
+          <Property Name="isActive" Type="char" MaxLength="1" />
+          <Property Name="cretedBy" Type="nvarchar(max)" />
+          <Property Name="cretedDate" Type="datetime" />
+          <Property Name="cretedByIp" Type="nvarchar" MaxLength="100" />
+          <Property Name="updatedBy" Type="nvarchar(max)" />
+          <Property Name="updatedDate" Type="datetime" />
+          <Property Name="updatedByIp" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="JDMasterSub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jdMasterId" Type="int" />
+          <Property Name="descriptionSub" Type="ntext" />
+          <Property Name="weight" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="subType" Type="varchar" MaxLength="50" />
+          <Property Name="isStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="KPI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPITypeId" Type="int" />
+          <Property Name="KPITypeSubId" Type="int" />
+          <Property Name="KPIYear" Type="int" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="KPIName" Type="ntext" />
+          <Property Name="KPIDetail" Type="ntext" />
+          <Property Name="KPIGoal" Type="ntext" />
+          <Property Name="KPIWeight" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="KPIResult" Type="nvarchar" MaxLength="2000" />
+          <Property Name="KPIScore" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="KPIHeader" Type="int" />
+          <Property Name="isOrder" Type="int" />
+          <Property Name="GoalRang1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang4" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang5" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="ntext" />
+          <Property Name="KPIStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="KPIJoin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPIId" Type="int" />
+          <Property Name="accountId" Type="int" />
+          <Property Name="percentJoin" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percentJoinScore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="percentWorkload" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="percentWorkloadScore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="KPIReport">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPIId" Type="int" />
+          <Property Name="reportQuarter" Type="int" />
+          <Property Name="reportResult" Type="nvarchar" MaxLength="1000" />
+          <Property Name="reportScore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="reportRemark" Type="ntext" />
+          <Property Name="path" Type="nvarchar" MaxLength="1000" />
+          <Property Name="fileName" Type="nvarchar" MaxLength="1000" />
+          <Property Name="fileNameOld" Type="nvarchar" MaxLength="1000" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="cretaedDate" Type="datetime" />
+          <Property Name="reportStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="KPIResponsible">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PercentManagerId" Type="int" />
+          <Property Name="attributeId" Type="int" />
+          <Property Name="KPIYearControlId" Type="int" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="scoreAttribute" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="ntext" />
+          <Property Name="isActive" Type="char" MaxLength="1" />
+          <Property Name="createdBy" Type="int" />
+          <Property Name="createdDate" Type="datetime" />
+          <Property Name="updatedBy" Type="int" />
+          <Property Name="updatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="masterAtribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="attributeName" Type="nvarchar(max)" />
+          <Property Name="attributeDetail" Type="nvarchar(max)" />
+          <Property Name="attributePercent" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="attributeStatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="masterDDL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ddlType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ddlValue" Type="nvarchar" MaxLength="100" />
+          <Property Name="ddlDisplay" Type="nvarchar" MaxLength="100" />
+          <Property Name="ddlStatus" Type="char" MaxLength="1" />
+          <Property Name="ddlOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="masterKPIType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupKPI" Type="int" />
+          <Property Name="KPITypeDetail" Type="nvarchar(max)" />
+          <Property Name="KPITypeYear" Type="nvarchar" MaxLength="4" />
+          <Property Name="KPITypeStatus" Type="char" MaxLength="1" />
+          <Property Name="isOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="masterKPITypeSub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPITypeId" Type="int" />
+          <Property Name="KPITypeSubDetail" Type="nvarchar(max)" />
+          <Property Name="KPITypeSubStatus" Type="char" MaxLength="1" />
+          <Property Name="isOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="masterKPIYear">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPIYearDetail" Type="nvarchar" MaxLength="10" />
+          <Property Name="KPIYearStatus" Type="char" MaxLength="1" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="masterKPIYearControl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPIYearId" Type="int" />
+          <Property Name="KPIQuarterId" Type="int" />
+          <Property Name="KPIDetail" Type="nvarchar" MaxLength="1000" />
+          <Property Name="KPIStatus" Type="char" MaxLength="1" />
+          <Property Name="StatusLV1Evaluated" Type="char" MaxLength="1" />
+          <Property Name="StatusLV2Evaluated" Type="char" MaxLength="1" />
+          <Property Name="createdDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="masterProject">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPITypeId" Type="int" />
+          <Property Name="KPITypeSubId" Type="int" />
+          <Property Name="KPIYear" Type="int" />
+          <Property Name="projectName" Type="ntext" />
+          <Property Name="projectHeader" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TransactionKPIDisplay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="yid" Type="int" />
+          <Property Name="GroupId" Type="int" />
+          <Property Name="SubGroupId" Type="int" />
+          <Property Name="KPITypeId" Type="int" />
+          <Property Name="KPITypeSubId" Type="int" />
+          <Property Name="isActive" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="HRISStoreContainer">
+          <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountJD" EntityType="Self.AccountJD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="accountManager" EntityType="Self.accountManager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="evaluatePercentManager" EntityType="Self.evaluatePercentManager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAControl" EntityType="Self.JAControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAManagerFlowApprove" EntityType="Self.JAManagerFlowApprove" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMaster" EntityType="Self.JAMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMasterExtraDetail" EntityType="Self.JAMasterExtraDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMasterKeyResponsibilitiesDetail" EntityType="Self.JAMasterKeyResponsibilitiesDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMasterKPIDetail" EntityType="Self.JAMasterKPIDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMasterOtherActivitiesDetail" EntityType="Self.JAMasterOtherActivitiesDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JAMasterSecondaryActivitiesDetail" EntityType="Self.JAMasterSecondaryActivitiesDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JDMaster" EntityType="Self.JDMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JDMasterEmp" EntityType="Self.JDMasterEmp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JDMasterSub" EntityType="Self.JDMasterSub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPI" EntityType="Self.KPI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPIJoin" EntityType="Self.KPIJoin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPIReport" EntityType="Self.KPIReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPIResponsible" EntityType="Self.KPIResponsible" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterAtribute" EntityType="Self.masterAtribute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterDDL" EntityType="Self.masterDDL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterKPIType" EntityType="Self.masterKPIType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterKPITypeSub" EntityType="Self.masterKPITypeSub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterKPIYear" EntityType="Self.masterKPIYear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterKPIYearControl" EntityType="Self.masterKPIYearControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masterProject" EntityType="Self.masterProject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionKPIDisplay" EntityType="Self.TransactionKPIDisplay" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HRIS" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DateWorkStart" Type="DateTime" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LoginDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="AccountJD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accountId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="jdId" Type="Int32" />
+          <Property Name="yearId" Type="Int32" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="accountManager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accountId" Type="Int32" />
+          <Property Name="managerIdLevel1" Type="Int32" />
+          <Property Name="managerIdLevel2" Type="Int32" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SLRI_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CardID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Orders" Type="Int32" />
+          <Property Name="FirstNameTH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastNameTH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FirstNameEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleNameEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastNameEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="TitleTH" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="TitleEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeLevelID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeLevel" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DepID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SectorID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Sector" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ReportPosition" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ContractID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Contract" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SocialSecurity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Taxpayer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FundNo" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PassportID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Stafflevel" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="StaffType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SWD" Type="DateTime" Precision="0" />
+          <Property Name="GWD" Type="DateTime" Precision="0" />
+          <Property Name="Pic" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="WageCalculation" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNo" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="HouseNo_ht" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Building" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Building_ht" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Soi" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Soi_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Street_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Province_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="District_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SubDistrict" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SubDistrict_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPcode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ZIPcode_ht" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Country_ht" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_ht" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InternalPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="BirthPlace" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Height" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Race" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Religion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BloodType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Appearance" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Earmark" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="WebSite" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Instragram" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LineID" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MilitaryStatus" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CongenitalDisease" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hobby" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Sport" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Smoking" Type="Boolean" Nullable="false" />
+          <Property Name="Typewriter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DriverLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotorcycleDriverLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ToeicScore" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ToeflScore" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccountBank" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ForeignerStatus" Type="Boolean" Nullable="false" />
+          <Property Name="FamilyStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DirectorID" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="evaluatePercentManager">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yearControlId" Type="Int32" />
+          <Property Name="empId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Department" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="percentKnowledge" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percentAttribute" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="JAControl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaYear" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="jaStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cretedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cretedDate" Type="DateTime" Precision="3" />
+          <Property Name="cretedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAManagerFlowApprove">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mangerEmpID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="firstNameTH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="depID" Type="Int32" />
+          <Property Name="department" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV0ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV0FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV0LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV1ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV1FirstName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mangerLV1LastName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="JAMaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaYear" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="masterEmpId" Type="Int32" />
+          <Property Name="fullname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="education" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="major" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="empPosition" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="empSection" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="empDepartment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JACreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="JobPurpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="keyResponsibilitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="secondaryActivitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="otherActivitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="extraWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="competenciesKnowledge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="competenciesSkill" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="competenciesAbilities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="insideDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="outsideDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="outsideSLRI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="jaStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="submittedDate" Type="DateTime" Precision="3" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAMasterExtraDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaMasterId" Type="Int32" />
+          <Property Name="descriptionExtra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="refId" Type="Int32" />
+          <Property Name="directorId" Type="Int32" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAMasterKeyResponsibilitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaMasterId" Type="Int32" />
+          <Property Name="subKeyId" Type="Int32" />
+          <Property Name="descriptionKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="refId" Type="Int32" />
+          <Property Name="addSubCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idRefSub" Type="Int32" />
+          <Property Name="levelDisplay" Type="Int32" />
+          <Property Name="directorId" Type="Int32" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAMasterKPIDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaMasterId" Type="Int32" />
+          <Property Name="KPIId" Type="Int32" />
+          <Property Name="KPIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIGoal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIWeight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="refId" Type="Int32" />
+          <Property Name="directorId" Type="Int32" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAMasterOtherActivitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaMasterId" Type="Int32" />
+          <Property Name="descriptionOther" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="refId" Type="Int32" />
+          <Property Name="directorId" Type="Int32" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JAMasterSecondaryActivitiesDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jaMasterId" Type="Int32" />
+          <Property Name="descriptionSecondary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="goal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="refId" Type="Int32" />
+          <Property Name="directorId" Type="Int32" />
+          <Property Name="createdBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="createdByIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JDMaster">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jdPosition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="jdDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="jdPurpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="keyResponsibilities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="keyResponsibilitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="secondaryActivities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="secondaryActivitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="otherActivities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="otherActivitiesWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="positionOfDirectSuperior" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="positionOfDirectSubordinate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="amountOfDirectSubordinate" Type="Int32" />
+          <Property Name="amountSubordinate" Type="Int32" />
+          <Property Name="insideDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="outsideDepartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="outsideSLRI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EduBackground" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="major" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="proExp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="competenciesKnowledge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="competenciesSkill" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="competenciesAbilities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="jdStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cretedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cretedDate" Type="DateTime" Precision="3" />
+          <Property Name="cretedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JDMasterEmp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="empId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="jdId" Type="Int32" />
+          <Property Name="isActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cretedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cretedDate" Type="DateTime" Precision="3" />
+          <Property Name="cretedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="updatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedByIp" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="JDMasterSub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jdMasterId" Type="Int32" />
+          <Property Name="descriptionSub" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="subType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KPI">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPITypeId" Type="Int32" />
+          <Property Name="KPITypeSubId" Type="Int32" />
+          <Property Name="KPIYear" Type="Int32" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="KPIName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIGoal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIWeight" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="KPIResult" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="KPIScore" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="KPIHeader" Type="Int32" />
+          <Property Name="isOrder" Type="Int32" />
+          <Property Name="GoalRang1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang4" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GoalRang5" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPIStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KPIJoin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPIId" Type="Int32" />
+          <Property Name="accountId" Type="Int32" />
+          <Property Name="percentJoin" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percentJoinScore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="percentWorkload" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="percentWorkloadScore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KPIReport">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPIId" Type="Int32" />
+          <Property Name="reportQuarter" Type="Int32" />
+          <Property Name="reportResult" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="reportScore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="reportRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="path" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="fileName" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="fileNameOld" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="cretaedDate" Type="DateTime" Precision="3" />
+          <Property Name="reportStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KPIResponsible">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PercentManagerId" Type="Int32" />
+          <Property Name="attributeId" Type="Int32" />
+          <Property Name="KPIYearControlId" Type="Int32" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="scoreAttribute" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="createdBy" Type="Int32" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+          <Property Name="updatedBy" Type="Int32" />
+          <Property Name="updatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="masterAtribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="attributeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="attributeDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="attributePercent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="attributeStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="masterDDL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ddlType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ddlValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ddlDisplay" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ddlStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ddlOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="masterKPIType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupKPI" Type="Int32" />
+          <Property Name="KPITypeDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPITypeYear" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="KPITypeStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="isOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="masterKPITypeSub">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPITypeId" Type="Int32" />
+          <Property Name="KPITypeSubDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KPITypeSubStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="isOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="masterKPIYear">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPIYearDetail" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KPIYearStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="masterKPIYearControl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPIYearId" Type="Int32" />
+          <Property Name="KPIQuarterId" Type="Int32" />
+          <Property Name="KPIDetail" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="KPIStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="StatusLV1Evaluated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="StatusLV2Evaluated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="createdDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="masterProject">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KPITypeId" Type="Int32" />
+          <Property Name="KPITypeSubId" Type="Int32" />
+          <Property Name="KPIYear" Type="Int32" />
+          <Property Name="projectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="projectHeader" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TransactionKPIDisplay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="yid" Type="Int32" />
+          <Property Name="GroupId" Type="Int32" />
+          <Property Name="SubGroupId" Type="Int32" />
+          <Property Name="KPITypeId" Type="Int32" />
+          <Property Name="KPITypeSubId" Type="Int32" />
+          <Property Name="isActive" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="HRISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="AccountJDs" EntityType="Self.AccountJD" />
+          <EntitySet Name="accountManagers" EntityType="Self.accountManager" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="evaluatePercentManagers" EntityType="Self.evaluatePercentManager" />
+          <EntitySet Name="JAControls" EntityType="Self.JAControl" />
+          <EntitySet Name="JAManagerFlowApproves" EntityType="Self.JAManagerFlowApprove" />
+          <EntitySet Name="JAMasters" EntityType="Self.JAMaster" />
+          <EntitySet Name="JAMasterExtraDetails" EntityType="Self.JAMasterExtraDetail" />
+          <EntitySet Name="JAMasterKeyResponsibilitiesDetails" EntityType="Self.JAMasterKeyResponsibilitiesDetail" />
+          <EntitySet Name="JAMasterKPIDetails" EntityType="Self.JAMasterKPIDetail" />
+          <EntitySet Name="JAMasterOtherActivitiesDetails" EntityType="Self.JAMasterOtherActivitiesDetail" />
+          <EntitySet Name="JAMasterSecondaryActivitiesDetails" EntityType="Self.JAMasterSecondaryActivitiesDetail" />
+          <EntitySet Name="JDMasters" EntityType="Self.JDMaster" />
+          <EntitySet Name="JDMasterEmps" EntityType="Self.JDMasterEmp" />
+          <EntitySet Name="JDMasterSubs" EntityType="Self.JDMasterSub" />
+          <EntitySet Name="KPIs" EntityType="Self.KPI" />
+          <EntitySet Name="KPIJoins" EntityType="Self.KPIJoin" />
+          <EntitySet Name="KPIReports" EntityType="Self.KPIReport" />
+          <EntitySet Name="KPIResponsibles" EntityType="Self.KPIResponsible" />
+          <EntitySet Name="masterAtributes" EntityType="Self.masterAtribute" />
+          <EntitySet Name="masterDDLs" EntityType="Self.masterDDL" />
+          <EntitySet Name="masterKPITypes" EntityType="Self.masterKPIType" />
+          <EntitySet Name="masterKPITypeSubs" EntityType="Self.masterKPITypeSub" />
+          <EntitySet Name="masterKPIYears" EntityType="Self.masterKPIYear" />
+          <EntitySet Name="masterKPIYearControls" EntityType="Self.masterKPIYearControl" />
+          <EntitySet Name="masterProjects" EntityType="Self.masterProject" />
+          <EntitySet Name="TransactionKPIDisplays" EntityType="Self.TransactionKPIDisplay" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HRISStoreContainer" CdmEntityContainer="HRISEntities">
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="HRIS.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="DateWorkStart" ColumnName="DateWorkStart" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccountJDs">
+            <EntityTypeMapping TypeName="HRIS.AccountJD">
+              <MappingFragment StoreEntitySet="AccountJD">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="jdId" ColumnName="jdId" />
+                <ScalarProperty Name="yearId" ColumnName="yearId" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="accountManagers">
+            <EntityTypeMapping TypeName="HRIS.accountManager">
+              <MappingFragment StoreEntitySet="accountManager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="managerIdLevel1" ColumnName="managerIdLevel1" />
+                <ScalarProperty Name="managerIdLevel2" ColumnName="managerIdLevel2" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="HRIS.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="SLRI_ID" ColumnName="SLRI_ID" />
+                <ScalarProperty Name="CardID" ColumnName="CardID" />
+                <ScalarProperty Name="Orders" ColumnName="Orders" />
+                <ScalarProperty Name="FirstNameTH" ColumnName="FirstNameTH" />
+                <ScalarProperty Name="LastNameTH" ColumnName="LastNameTH" />
+                <ScalarProperty Name="FirstNameEN" ColumnName="FirstNameEN" />
+                <ScalarProperty Name="MiddleNameEN" ColumnName="MiddleNameEN" />
+                <ScalarProperty Name="LastNameEN" ColumnName="LastNameEN" />
+                <ScalarProperty Name="TitleTH" ColumnName="TitleTH" />
+                <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
+                <ScalarProperty Name="EmployeeLevelID" ColumnName="EmployeeLevelID" />
+                <ScalarProperty Name="EmployeeLevel" ColumnName="EmployeeLevel" />
+                <ScalarProperty Name="DepID" ColumnName="DepID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ReportPosition" ColumnName="ReportPosition" />
+                <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+                <ScalarProperty Name="Contract" ColumnName="Contract" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
+                <ScalarProperty Name="SocialSecurity" ColumnName="SocialSecurity" />
+                <ScalarProperty Name="Taxpayer" ColumnName="Taxpayer" />
+                <ScalarProperty Name="FundNo" ColumnName="FundNo" />
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+                <ScalarProperty Name="Stafflevel" ColumnName="Stafflevel" />
+                <ScalarProperty Name="StaffType" ColumnName="StaffType" />
+                <ScalarProperty Name="SWD" ColumnName="SWD" />
+                <ScalarProperty Name="GWD" ColumnName="GWD" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="WageCalculation" ColumnName="WageCalculation" />
+                <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+                <ScalarProperty Name="HouseNo_ht" ColumnName="HouseNo_ht" />
+                <ScalarProperty Name="Building" ColumnName="Building" />
+                <ScalarProperty Name="Building_ht" ColumnName="Building_ht" />
+                <ScalarProperty Name="Soi" ColumnName="Soi" />
+                <ScalarProperty Name="Soi_ht" ColumnName="Soi_ht" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Street_ht" ColumnName="Street_ht" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Province_ht" ColumnName="Province_ht" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="District_ht" ColumnName="District_ht" />
+                <ScalarProperty Name="SubDistrict" ColumnName="SubDistrict" />
+                <ScalarProperty Name="SubDistrict_ht" ColumnName="SubDistrict_ht" />
+                <ScalarProperty Name="ZIPcode" ColumnName="ZIPcode" />
+                <ScalarProperty Name="ZIPcode_ht" ColumnName="ZIPcode_ht" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Country_ht" ColumnName="Country_ht" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone_ht" ColumnName="Phone_ht" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="InternalPhone" ColumnName="InternalPhone" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+                <ScalarProperty Name="Appearance" ColumnName="Appearance" />
+                <ScalarProperty Name="Earmark" ColumnName="Earmark" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Instragram" ColumnName="Instragram" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+                <ScalarProperty Name="CongenitalDisease" ColumnName="CongenitalDisease" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Hobby" ColumnName="Hobby" />
+                <ScalarProperty Name="Sport" ColumnName="Sport" />
+                <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+                <ScalarProperty Name="Typewriter" ColumnName="Typewriter" />
+                <ScalarProperty Name="DriverLicense" ColumnName="DriverLicense" />
+                <ScalarProperty Name="MotorcycleDriverLicense" ColumnName="MotorcycleDriverLicense" />
+                <ScalarProperty Name="ToeicScore" ColumnName="ToeicScore" />
+                <ScalarProperty Name="ToeflScore" ColumnName="ToeflScore" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="AccountBank" ColumnName="AccountBank" />
+                <ScalarProperty Name="ForeignerStatus" ColumnName="ForeignerStatus" />
+                <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
+                <ScalarProperty Name="DirectorID" ColumnName="DirectorID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="evaluatePercentManagers">
+            <EntityTypeMapping TypeName="HRIS.evaluatePercentManager">
+              <MappingFragment StoreEntitySet="evaluatePercentManager">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="yearControlId" ColumnName="yearControlId" />
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="percentKnowledge" ColumnName="percentKnowledge" />
+                <ScalarProperty Name="percentAttribute" ColumnName="percentAttribute" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAControls">
+            <EntityTypeMapping TypeName="HRIS.JAControl">
+              <MappingFragment StoreEntitySet="JAControl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaYear" ColumnName="jaYear" />
+                <ScalarProperty Name="jaStatus" ColumnName="jaStatus" />
+                <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+                <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+                <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAManagerFlowApproves">
+            <EntityTypeMapping TypeName="HRIS.JAManagerFlowApprove">
+              <MappingFragment StoreEntitySet="JAManagerFlowApprove">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="mangerEmpID" ColumnName="mangerEmpID" />
+                <ScalarProperty Name="firstNameTH" ColumnName="firstNameTH" />
+                <ScalarProperty Name="depID" ColumnName="depID" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="mangerLV0ID" ColumnName="mangerLV0ID" />
+                <ScalarProperty Name="mangerLV0FirstName" ColumnName="mangerLV0FirstName" />
+                <ScalarProperty Name="mangerLV0LastName" ColumnName="mangerLV0LastName" />
+                <ScalarProperty Name="mangerLV1ID" ColumnName="mangerLV1ID" />
+                <ScalarProperty Name="mangerLV1FirstName" ColumnName="mangerLV1FirstName" />
+                <ScalarProperty Name="mangerLV1LastName" ColumnName="mangerLV1LastName" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasters">
+            <EntityTypeMapping TypeName="HRIS.JAMaster">
+              <MappingFragment StoreEntitySet="JAMaster">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaYear" ColumnName="jaYear" />
+                <ScalarProperty Name="masterEmpId" ColumnName="masterEmpId" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="education" ColumnName="education" />
+                <ScalarProperty Name="major" ColumnName="major" />
+                <ScalarProperty Name="experience" ColumnName="experience" />
+                <ScalarProperty Name="empPosition" ColumnName="empPosition" />
+                <ScalarProperty Name="empSection" ColumnName="empSection" />
+                <ScalarProperty Name="empDepartment" ColumnName="empDepartment" />
+                <ScalarProperty Name="JACreatedDate" ColumnName="JACreatedDate" />
+                <ScalarProperty Name="JobPurpose" ColumnName="JobPurpose" />
+                <ScalarProperty Name="KPIWeight" ColumnName="KPIWeight" />
+                <ScalarProperty Name="keyResponsibilitiesWeight" ColumnName="keyResponsibilitiesWeight" />
+                <ScalarProperty Name="secondaryActivitiesWeight" ColumnName="secondaryActivitiesWeight" />
+                <ScalarProperty Name="otherActivitiesWeight" ColumnName="otherActivitiesWeight" />
+                <ScalarProperty Name="extraWeight" ColumnName="extraWeight" />
+                <ScalarProperty Name="competenciesKnowledge" ColumnName="competenciesKnowledge" />
+                <ScalarProperty Name="competenciesSkill" ColumnName="competenciesSkill" />
+                <ScalarProperty Name="competenciesAbilities" ColumnName="competenciesAbilities" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="insideDepartment" ColumnName="insideDepartment" />
+                <ScalarProperty Name="outsideDepartment" ColumnName="outsideDepartment" />
+                <ScalarProperty Name="outsideSLRI" ColumnName="outsideSLRI" />
+                <ScalarProperty Name="jaStatus" ColumnName="jaStatus" />
+                <ScalarProperty Name="submittedDate" ColumnName="submittedDate" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasterExtraDetails">
+            <EntityTypeMapping TypeName="HRIS.JAMasterExtraDetail">
+              <MappingFragment StoreEntitySet="JAMasterExtraDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+                <ScalarProperty Name="descriptionExtra" ColumnName="descriptionExtra" />
+                <ScalarProperty Name="goal" ColumnName="goal" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="refId" ColumnName="refId" />
+                <ScalarProperty Name="directorId" ColumnName="directorId" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasterKeyResponsibilitiesDetails">
+            <EntityTypeMapping TypeName="HRIS.JAMasterKeyResponsibilitiesDetail">
+              <MappingFragment StoreEntitySet="JAMasterKeyResponsibilitiesDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+                <ScalarProperty Name="subKeyId" ColumnName="subKeyId" />
+                <ScalarProperty Name="descriptionKey" ColumnName="descriptionKey" />
+                <ScalarProperty Name="goal" ColumnName="goal" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="refId" ColumnName="refId" />
+                <ScalarProperty Name="addSubCheck" ColumnName="addSubCheck" />
+                <ScalarProperty Name="idRefSub" ColumnName="idRefSub" />
+                <ScalarProperty Name="levelDisplay" ColumnName="levelDisplay" />
+                <ScalarProperty Name="directorId" ColumnName="directorId" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasterKPIDetails">
+            <EntityTypeMapping TypeName="HRIS.JAMasterKPIDetail">
+              <MappingFragment StoreEntitySet="JAMasterKPIDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+                <ScalarProperty Name="KPIId" ColumnName="KPIId" />
+                <ScalarProperty Name="KPIName" ColumnName="KPIName" />
+                <ScalarProperty Name="KPIDescription" ColumnName="KPIDescription" />
+                <ScalarProperty Name="KPIGoal" ColumnName="KPIGoal" />
+                <ScalarProperty Name="KPIWeight" ColumnName="KPIWeight" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="refId" ColumnName="refId" />
+                <ScalarProperty Name="directorId" ColumnName="directorId" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasterOtherActivitiesDetails">
+            <EntityTypeMapping TypeName="HRIS.JAMasterOtherActivitiesDetail">
+              <MappingFragment StoreEntitySet="JAMasterOtherActivitiesDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+                <ScalarProperty Name="descriptionOther" ColumnName="descriptionOther" />
+                <ScalarProperty Name="goal" ColumnName="goal" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="refId" ColumnName="refId" />
+                <ScalarProperty Name="directorId" ColumnName="directorId" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JAMasterSecondaryActivitiesDetails">
+            <EntityTypeMapping TypeName="HRIS.JAMasterSecondaryActivitiesDetail">
+              <MappingFragment StoreEntitySet="JAMasterSecondaryActivitiesDetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+                <ScalarProperty Name="descriptionSecondary" ColumnName="descriptionSecondary" />
+                <ScalarProperty Name="goal" ColumnName="goal" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+                <ScalarProperty Name="refId" ColumnName="refId" />
+                <ScalarProperty Name="directorId" ColumnName="directorId" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JDMasters">
+            <EntityTypeMapping TypeName="HRIS.JDMaster">
+              <MappingFragment StoreEntitySet="JDMaster">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jdPosition" ColumnName="jdPosition" />
+                <ScalarProperty Name="jdDepartment" ColumnName="jdDepartment" />
+                <ScalarProperty Name="jdPurpose" ColumnName="jdPurpose" />
+                <ScalarProperty Name="keyResponsibilities" ColumnName="keyResponsibilities" />
+                <ScalarProperty Name="keyResponsibilitiesWeight" ColumnName="keyResponsibilitiesWeight" />
+                <ScalarProperty Name="secondaryActivities" ColumnName="secondaryActivities" />
+                <ScalarProperty Name="secondaryActivitiesWeight" ColumnName="secondaryActivitiesWeight" />
+                <ScalarProperty Name="otherActivities" ColumnName="otherActivities" />
+                <ScalarProperty Name="otherActivitiesWeight" ColumnName="otherActivitiesWeight" />
+                <ScalarProperty Name="positionOfDirectSuperior" ColumnName="positionOfDirectSuperior" />
+                <ScalarProperty Name="positionOfDirectSubordinate" ColumnName="positionOfDirectSubordinate" />
+                <ScalarProperty Name="amountOfDirectSubordinate" ColumnName="amountOfDirectSubordinate" />
+                <ScalarProperty Name="amountSubordinate" ColumnName="amountSubordinate" />
+                <ScalarProperty Name="insideDepartment" ColumnName="insideDepartment" />
+                <ScalarProperty Name="outsideDepartment" ColumnName="outsideDepartment" />
+                <ScalarProperty Name="outsideSLRI" ColumnName="outsideSLRI" />
+                <ScalarProperty Name="EduBackground" ColumnName="EduBackground" />
+                <ScalarProperty Name="major" ColumnName="major" />
+                <ScalarProperty Name="proExp" ColumnName="proExp" />
+                <ScalarProperty Name="competenciesKnowledge" ColumnName="competenciesKnowledge" />
+                <ScalarProperty Name="competenciesSkill" ColumnName="competenciesSkill" />
+                <ScalarProperty Name="competenciesAbilities" ColumnName="competenciesAbilities" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="jdStatus" ColumnName="jdStatus" />
+                <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+                <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+                <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JDMasterEmps">
+            <EntityTypeMapping TypeName="HRIS.JDMasterEmp">
+              <MappingFragment StoreEntitySet="JDMasterEmp">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empId" ColumnName="empId" />
+                <ScalarProperty Name="jdId" ColumnName="jdId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+                <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+                <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+                <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JDMasterSubs">
+            <EntityTypeMapping TypeName="HRIS.JDMasterSub">
+              <MappingFragment StoreEntitySet="JDMasterSub">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="jdMasterId" ColumnName="jdMasterId" />
+                <ScalarProperty Name="descriptionSub" ColumnName="descriptionSub" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="subType" ColumnName="subType" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPIs">
+            <EntityTypeMapping TypeName="HRIS.KPI">
+              <MappingFragment StoreEntitySet="KPI">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPITypeId" ColumnName="KPITypeId" />
+                <ScalarProperty Name="KPITypeSubId" ColumnName="KPITypeSubId" />
+                <ScalarProperty Name="KPIYear" ColumnName="KPIYear" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="KPIName" ColumnName="KPIName" />
+                <ScalarProperty Name="KPIDetail" ColumnName="KPIDetail" />
+                <ScalarProperty Name="KPIGoal" ColumnName="KPIGoal" />
+                <ScalarProperty Name="KPIWeight" ColumnName="KPIWeight" />
+                <ScalarProperty Name="KPIResult" ColumnName="KPIResult" />
+                <ScalarProperty Name="KPIScore" ColumnName="KPIScore" />
+                <ScalarProperty Name="KPIHeader" ColumnName="KPIHeader" />
+                <ScalarProperty Name="isOrder" ColumnName="isOrder" />
+                <ScalarProperty Name="GoalRang1" ColumnName="GoalRang1" />
+                <ScalarProperty Name="GoalRang2" ColumnName="GoalRang2" />
+                <ScalarProperty Name="GoalRang3" ColumnName="GoalRang3" />
+                <ScalarProperty Name="GoalRang4" ColumnName="GoalRang4" />
+                <ScalarProperty Name="GoalRang5" ColumnName="GoalRang5" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="KPIStatus" ColumnName="KPIStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPIJoins">
+            <EntityTypeMapping TypeName="HRIS.KPIJoin">
+              <MappingFragment StoreEntitySet="KPIJoin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPIId" ColumnName="KPIId" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="percentJoin" ColumnName="percentJoin" />
+                <ScalarProperty Name="percentJoinScore" ColumnName="percentJoinScore" />
+                <ScalarProperty Name="percentWorkload" ColumnName="percentWorkload" />
+                <ScalarProperty Name="percentWorkloadScore" ColumnName="percentWorkloadScore" />
+                <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPIReports">
+            <EntityTypeMapping TypeName="HRIS.KPIReport">
+              <MappingFragment StoreEntitySet="KPIReport">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPIId" ColumnName="KPIId" />
+                <ScalarProperty Name="reportQuarter" ColumnName="reportQuarter" />
+                <ScalarProperty Name="reportResult" ColumnName="reportResult" />
+                <ScalarProperty Name="reportScore" ColumnName="reportScore" />
+                <ScalarProperty Name="reportRemark" ColumnName="reportRemark" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="fileNameOld" ColumnName="fileNameOld" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="cretaedDate" ColumnName="cretaedDate" />
+                <ScalarProperty Name="reportStatus" ColumnName="reportStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPIResponsibles">
+            <EntityTypeMapping TypeName="HRIS.KPIResponsible">
+              <MappingFragment StoreEntitySet="KPIResponsible">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PercentManagerId" ColumnName="PercentManagerId" />
+                <ScalarProperty Name="attributeId" ColumnName="attributeId" />
+                <ScalarProperty Name="KPIYearControlId" ColumnName="KPIYearControlId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="scoreAttribute" ColumnName="scoreAttribute" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+                <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterAtributes">
+            <EntityTypeMapping TypeName="HRIS.masterAtribute">
+              <MappingFragment StoreEntitySet="masterAtribute">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="attributeName" ColumnName="attributeName" />
+                <ScalarProperty Name="attributeDetail" ColumnName="attributeDetail" />
+                <ScalarProperty Name="attributePercent" ColumnName="attributePercent" />
+                <ScalarProperty Name="attributeStatus" ColumnName="attributeStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterDDLs">
+            <EntityTypeMapping TypeName="HRIS.masterDDL">
+              <MappingFragment StoreEntitySet="masterDDL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ddlType" ColumnName="ddlType" />
+                <ScalarProperty Name="ddlValue" ColumnName="ddlValue" />
+                <ScalarProperty Name="ddlDisplay" ColumnName="ddlDisplay" />
+                <ScalarProperty Name="ddlStatus" ColumnName="ddlStatus" />
+                <ScalarProperty Name="ddlOrder" ColumnName="ddlOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterKPITypes">
+            <EntityTypeMapping TypeName="HRIS.masterKPIType">
+              <MappingFragment StoreEntitySet="masterKPIType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="groupKPI" ColumnName="groupKPI" />
+                <ScalarProperty Name="KPITypeDetail" ColumnName="KPITypeDetail" />
+                <ScalarProperty Name="KPITypeYear" ColumnName="KPITypeYear" />
+                <ScalarProperty Name="KPITypeStatus" ColumnName="KPITypeStatus" />
+                <ScalarProperty Name="isOrder" ColumnName="isOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterKPITypeSubs">
+            <EntityTypeMapping TypeName="HRIS.masterKPITypeSub">
+              <MappingFragment StoreEntitySet="masterKPITypeSub">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPITypeId" ColumnName="KPITypeId" />
+                <ScalarProperty Name="KPITypeSubDetail" ColumnName="KPITypeSubDetail" />
+                <ScalarProperty Name="KPITypeSubStatus" ColumnName="KPITypeSubStatus" />
+                <ScalarProperty Name="isOrder" ColumnName="isOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterKPIYears">
+            <EntityTypeMapping TypeName="HRIS.masterKPIYear">
+              <MappingFragment StoreEntitySet="masterKPIYear">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPIYearDetail" ColumnName="KPIYearDetail" />
+                <ScalarProperty Name="KPIYearStatus" ColumnName="KPIYearStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterKPIYearControls">
+            <EntityTypeMapping TypeName="HRIS.masterKPIYearControl">
+              <MappingFragment StoreEntitySet="masterKPIYearControl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPIYearId" ColumnName="KPIYearId" />
+                <ScalarProperty Name="KPIQuarterId" ColumnName="KPIQuarterId" />
+                <ScalarProperty Name="KPIDetail" ColumnName="KPIDetail" />
+                <ScalarProperty Name="KPIStatus" ColumnName="KPIStatus" />
+                <ScalarProperty Name="StatusLV1Evaluated" ColumnName="StatusLV1Evaluated" />
+                <ScalarProperty Name="StatusLV2Evaluated" ColumnName="StatusLV2Evaluated" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masterProjects">
+            <EntityTypeMapping TypeName="HRIS.masterProject">
+              <MappingFragment StoreEntitySet="masterProject">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="KPITypeId" ColumnName="KPITypeId" />
+                <ScalarProperty Name="KPITypeSubId" ColumnName="KPITypeSubId" />
+                <ScalarProperty Name="KPIYear" ColumnName="KPIYear" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="projectHeader" ColumnName="projectHeader" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionKPIDisplays">
+            <EntityTypeMapping TypeName="HRIS.TransactionKPIDisplay">
+              <MappingFragment StoreEntitySet="TransactionKPIDisplay">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="yid" ColumnName="yid" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="SubGroupId" ColumnName="SubGroupId" />
+                <ScalarProperty Name="KPITypeId" ColumnName="KPITypeId" />
+                <ScalarProperty Name="KPITypeSubId" ColumnName="KPITypeSubId" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

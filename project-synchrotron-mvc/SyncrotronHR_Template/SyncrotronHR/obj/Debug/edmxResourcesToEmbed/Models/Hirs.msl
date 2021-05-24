@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRISModelStoreContainer" CdmEntityContainer="HRISEntities1">
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="HRISModel.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="SLRI_ID" ColumnName="SLRI_ID" />
+          <ScalarProperty Name="CardID" ColumnName="CardID" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="FirstNameTH" ColumnName="FirstNameTH" />
+          <ScalarProperty Name="LastNameTH" ColumnName="LastNameTH" />
+          <ScalarProperty Name="FirstNameEN" ColumnName="FirstNameEN" />
+          <ScalarProperty Name="MiddleNameEN" ColumnName="MiddleNameEN" />
+          <ScalarProperty Name="LastNameEN" ColumnName="LastNameEN" />
+          <ScalarProperty Name="TitleTH" ColumnName="TitleTH" />
+          <ScalarProperty Name="TitleEN" ColumnName="TitleEN" />
+          <ScalarProperty Name="EmployeeLevelID" ColumnName="EmployeeLevelID" />
+          <ScalarProperty Name="EmployeeLevel" ColumnName="EmployeeLevel" />
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="ReportPosition" ColumnName="ReportPosition" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="Contract" ColumnName="Contract" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PersonalID" ColumnName="PersonalID" />
+          <ScalarProperty Name="SocialSecurity" ColumnName="SocialSecurity" />
+          <ScalarProperty Name="Taxpayer" ColumnName="Taxpayer" />
+          <ScalarProperty Name="FundNo" ColumnName="FundNo" />
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="Stafflevel" ColumnName="Stafflevel" />
+          <ScalarProperty Name="StaffType" ColumnName="StaffType" />
+          <ScalarProperty Name="SWD" ColumnName="SWD" />
+          <ScalarProperty Name="GWD" ColumnName="GWD" />
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="WageCalculation" ColumnName="WageCalculation" />
+          <ScalarProperty Name="HouseNo" ColumnName="HouseNo" />
+          <ScalarProperty Name="HouseNo_ht" ColumnName="HouseNo_ht" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="Building_ht" ColumnName="Building_ht" />
+          <ScalarProperty Name="Soi" ColumnName="Soi" />
+          <ScalarProperty Name="Soi_ht" ColumnName="Soi_ht" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Street_ht" ColumnName="Street_ht" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Province_ht" ColumnName="Province_ht" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="District_ht" ColumnName="District_ht" />
+          <ScalarProperty Name="SubDistrict" ColumnName="SubDistrict" />
+          <ScalarProperty Name="SubDistrict_ht" ColumnName="SubDistrict_ht" />
+          <ScalarProperty Name="ZIPcode" ColumnName="ZIPcode" />
+          <ScalarProperty Name="ZIPcode_ht" ColumnName="ZIPcode_ht" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Country_ht" ColumnName="Country_ht" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone_ht" ColumnName="Phone_ht" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="InternalPhone" ColumnName="InternalPhone" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Race" ColumnName="Race" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="BloodType" ColumnName="BloodType" />
+          <ScalarProperty Name="Appearance" ColumnName="Appearance" />
+          <ScalarProperty Name="Earmark" ColumnName="Earmark" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Instragram" ColumnName="Instragram" />
+          <ScalarProperty Name="LineID" ColumnName="LineID" />
+          <ScalarProperty Name="MilitaryStatus" ColumnName="MilitaryStatus" />
+          <ScalarProperty Name="CongenitalDisease" ColumnName="CongenitalDisease" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Hobby" ColumnName="Hobby" />
+          <ScalarProperty Name="Sport" ColumnName="Sport" />
+          <ScalarProperty Name="Smoking" ColumnName="Smoking" />
+          <ScalarProperty Name="Typewriter" ColumnName="Typewriter" />
+          <ScalarProperty Name="DriverLicense" ColumnName="DriverLicense" />
+          <ScalarProperty Name="MotorcycleDriverLicense" ColumnName="MotorcycleDriverLicense" />
+          <ScalarProperty Name="ToeicScore" ColumnName="ToeicScore" />
+          <ScalarProperty Name="ToeflScore" ColumnName="ToeflScore" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="AccountBank" ColumnName="AccountBank" />
+          <ScalarProperty Name="ForeignerStatus" ColumnName="ForeignerStatus" />
+          <ScalarProperty Name="FamilyStatus" ColumnName="FamilyStatus" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAControl">
+      <EntityTypeMapping TypeName="HRISModel.JAControl">
+        <MappingFragment StoreEntitySet="JAControl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaYear" ColumnName="jaYear" />
+          <ScalarProperty Name="jaStatus" ColumnName="jaStatus" />
+          <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+          <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+          <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMaster">
+      <EntityTypeMapping TypeName="HRISModel.JAMaster">
+        <MappingFragment StoreEntitySet="JAMaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaYear" ColumnName="jaYear" />
+          <ScalarProperty Name="masterEmpId" ColumnName="masterEmpId" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="major" ColumnName="major" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+          <ScalarProperty Name="empPosition" ColumnName="empPosition" />
+          <ScalarProperty Name="empSection" ColumnName="empSection" />
+          <ScalarProperty Name="empDepartment" ColumnName="empDepartment" />
+          <ScalarProperty Name="JACreatedDate" ColumnName="JACreatedDate" />
+          <ScalarProperty Name="JobPurpose" ColumnName="JobPurpose" />
+          <ScalarProperty Name="KPIWeight" ColumnName="KPIWeight" />
+          <ScalarProperty Name="keyResponsibilitiesWeight" ColumnName="keyResponsibilitiesWeight" />
+          <ScalarProperty Name="secondaryActivitiesWeight" ColumnName="secondaryActivitiesWeight" />
+          <ScalarProperty Name="otherActivitiesWeight" ColumnName="otherActivitiesWeight" />
+          <ScalarProperty Name="extraWeight" ColumnName="extraWeight" />
+          <ScalarProperty Name="competenciesKnowledge" ColumnName="competenciesKnowledge" />
+          <ScalarProperty Name="competenciesSkill" ColumnName="competenciesSkill" />
+          <ScalarProperty Name="competenciesAbilities" ColumnName="competenciesAbilities" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="insideDepartment" ColumnName="insideDepartment" />
+          <ScalarProperty Name="outsideDepartment" ColumnName="outsideDepartment" />
+          <ScalarProperty Name="outsideSLRI" ColumnName="outsideSLRI" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMasterExtraDetail">
+      <EntityTypeMapping TypeName="HRISModel.JAMasterExtraDetail">
+        <MappingFragment StoreEntitySet="JAMasterExtraDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+          <ScalarProperty Name="descriptionExtra" ColumnName="descriptionExtra" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMasterKeyResponsibilitiesDetail">
+      <EntityTypeMapping TypeName="HRISModel.JAMasterKeyResponsibilitiesDetail">
+        <MappingFragment StoreEntitySet="JAMasterKeyResponsibilitiesDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+          <ScalarProperty Name="descriptionKey" ColumnName="descriptionKey" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMasterKPIDetail">
+      <EntityTypeMapping TypeName="HRISModel.JAMasterKPIDetail">
+        <MappingFragment StoreEntitySet="JAMasterKPIDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+          <ScalarProperty Name="KPIId" ColumnName="KPIId" />
+          <ScalarProperty Name="KPIName" ColumnName="KPIName" />
+          <ScalarProperty Name="KPIDescription" ColumnName="KPIDescription" />
+          <ScalarProperty Name="KPIGoal" ColumnName="KPIGoal" />
+          <ScalarProperty Name="KPIWeight" ColumnName="KPIWeight" />
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMasterOtherActivitiesDetail">
+      <EntityTypeMapping TypeName="HRISModel.JAMasterOtherActivitiesDetail">
+        <MappingFragment StoreEntitySet="JAMasterOtherActivitiesDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+          <ScalarProperty Name="descriptionOther" ColumnName="descriptionOther" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JAMasterSecondaryActivitiesDetail">
+      <EntityTypeMapping TypeName="HRISModel.JAMasterSecondaryActivitiesDetail">
+        <MappingFragment StoreEntitySet="JAMasterSecondaryActivitiesDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jaMasterId" ColumnName="jaMasterId" />
+          <ScalarProperty Name="descriptionSecondary" ColumnName="descriptionSecondary" />
+          <ScalarProperty Name="goal" ColumnName="goal" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="isStatus" ColumnName="isStatus" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdByIP" ColumnName="createdByIP" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JDMaster">
+      <EntityTypeMapping TypeName="HRISModel.JDMaster">
+        <MappingFragment StoreEntitySet="JDMaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="jdPosition" ColumnName="jdPosition" />
+          <ScalarProperty Name="jdDepartment" ColumnName="jdDepartment" />
+          <ScalarProperty Name="jdPurpose" ColumnName="jdPurpose" />
+          <ScalarProperty Name="keyResponsibilities" ColumnName="keyResponsibilities" />
+          <ScalarProperty Name="secondaryActivities" ColumnName="secondaryActivities" />
+          <ScalarProperty Name="otherActivities" ColumnName="otherActivities" />
+          <ScalarProperty Name="competenciesKnowledge" ColumnName="competenciesKnowledge" />
+          <ScalarProperty Name="competenciesSkill" ColumnName="competenciesSkill" />
+          <ScalarProperty Name="competenciesAbilities" ColumnName="competenciesAbilities" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="jdStatus" ColumnName="jdStatus" />
+          <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+          <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+          <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JDMasterEmp">
+      <EntityTypeMapping TypeName="HRISModel.JDMasterEmp">
+        <MappingFragment StoreEntitySet="JDMasterEmp">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empId" ColumnName="empId" />
+          <ScalarProperty Name="jdId" ColumnName="jdId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="cretedBy" ColumnName="cretedBy" />
+          <ScalarProperty Name="cretedDate" ColumnName="cretedDate" />
+          <ScalarProperty Name="cretedByIp" ColumnName="cretedByIp" />
+          <ScalarProperty Name="updatedBy" ColumnName="updatedBy" />
+          <ScalarProperty Name="updatedDate" ColumnName="updatedDate" />
+          <ScalarProperty Name="updatedByIp" ColumnName="updatedByIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

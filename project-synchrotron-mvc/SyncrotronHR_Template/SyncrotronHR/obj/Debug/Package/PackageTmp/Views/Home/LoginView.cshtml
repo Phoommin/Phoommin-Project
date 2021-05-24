@@ -1,0 +1,37 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+    ViewBag.Title = "Job Assignments";
+    var jat = (JAMaster)ViewData["jaDetails"];
+}
+@Styles.Render("~/Content/JA-JD.css")
+
+<h2><b>Login</b></h2>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="taUsername" name="taUsername" style = "border-radius: 10px 10px 10px 10px;" />
+                <br /><br />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="text" id="taPassword" name="taPassword" style = "border-radius: 10px 10px 10px 10px;"/>
+                <br /><br />
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <button type="submit" class="btn btn-primary" style = "border-radius: 20px 20px 20px 20px;">OK</button>
+    </div>
+
+}
+
+
+
+

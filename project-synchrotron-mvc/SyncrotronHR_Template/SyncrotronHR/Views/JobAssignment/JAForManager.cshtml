@@ -1,0 +1,584 @@
+﻿@using GridMvc.Html
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+    ViewBag.Title = "Job Assignments";
+    var jat = (JAMaster)ViewData["jaDetails"];
+    //var nam2 = ViewBag.NameDirector2;
+
+}
+@Styles.Render("~/Content/StyleSheet1.css")
+@Styles.Render("~/Content/Radio2.css")
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+    function showhide() {
+        var div = document.getElementById("divEdit");
+        var taEdit = document.getElementById("taEdit");
+        if (div.style.display !== "none") {
+            div.style.display = "none";
+            taEdit.required = false;
+        }
+        else {
+            div.style.display = "block";
+            taEdit.required = true;
+        }
+    }
+</script>
+
+<div align="center" @*class="card-topic2"*@>
+    <table align="center" width="1000px" border="0">
+        <tr>
+            <td colspan="6" align="center" class="auto-style1"><img style="width: 200px; height: 120px;" src="~/Images/syn_logo.png" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="6" align="center" class="auto-style1"><h4>แบบข้อตกลงปฏิบัติงาน (Job Agreement)<br />สถาบันวิจัยแสงซินโครตรอน (องค์การมหาชน)<br /><br /></h4></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                <table border="0" align="center" width="100%">
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>1) รายละเอียดของตำแหน่ง </b> (Position) <br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <table border="0" align="center" class="styled-table-1" width="100%">
+
+                                <tr>
+                                    <td width="200" align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อ-นามสกุล</td>
+                                    <td width="800" colspan="3"> &nbsp;&nbsp; @jat.fullname </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="200" align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อตำแหน่ง</td>
+                                    <td width="800" class="auto-style1" colspan="3"> &nbsp;&nbsp; @jat.empPosition </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="200" align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อส่วนงาน</td>
+                                    <td width="800" class="auto-style1" colspan="3">&nbsp;&nbsp; @jat.empSection </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="200" align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อฝ่าย</td>
+                                    <td width="500">&nbsp;&nbsp; @jat.empDepartment </td>
+                                    <td width="150" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;วันที่จัดทำ</td>
+                                    <td width="150"><label>@jat.createdDate</label></td>
+                                </tr>
+
+                            </table>
+
+                            <br />
+                        </th>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>2) วัตถุประสงค์  </b> (Job Purpose) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1" width="700px">
+                            <label id="taPurpose" name="taPurpose" style="width: 100%; max-width: 100%;">&nbsp;&nbsp;@jat.JobPurpose</label><br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="center">
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    @*<tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>3) ตัวชี้วัด   </b> (KPI)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right" class="auto-style1">
+                            <label> <b>น้ำหนัก&nbsp;@jat.KPIWeight&nbsp;%</b></label>&nbsp;
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" width="100%" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th width="300" align="center">รายละเอียด</th>
+                                        <th width="300" align="center">เป้าหมาย</th>
+                                        <th width="200" align="center">ผู้ร่วมงาน</th>
+                                        <th width="100" align="center">น้ำหนัก</th>
+                                    </tr>
+                                </thead>
+                                @foreach (JoinKpi K in ViewBag.listKpi)
+                                {
+                                    <tr>
+                                        <td height="50"> @K.Kpi.KPIDescription</td>
+                                        <td height="50"> @K.Kpi.KPIGoal</td>
+                                        <td height="50"> @K.employees.TitleTH@K.employees.FirstNameTH &nbsp;@K.employees.LastNameTH </td>
+                                        <td height="50" width="100" align="center"> <input type="text" style="width:70px" disabled value="@K.Kpi.KPIWeight" /></td>
+                                    </tr>
+                                }
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="center" class="auto-style1">
+                            <br /><br />
+                        </td>
+                    </tr>*@
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>4) หน้าที่หลัก/กิจกรรมหลัก   </b> (Key Responsibilities and Activities)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right" class="auto-style1">
+                            <label> <b>น้ำหนัก&nbsp;@jat.keyResponsibilitiesWeight&nbsp;%</b></label>&nbsp;
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" width="100%" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th width="300" align="center">รายละเอียด</th>
+                                        <th width="200" align="center">เป้าหมาย</th>
+                                        <th width="250" align="center">ผู้ร่วมงาน</th>
+                                        <th width="100" align="center">น้ำหนัก</th>
+                                        <th width="50" align="center"></th>
+                                    </tr>
+                                </thead>
+                                @foreach (JoinKey K in ViewBag.listKey)
+                                {
+                                    <tr>
+                                        @if (K.Key.addSubCheck == null)
+                                        {
+                                            <td height="50"><div class="col-lg-1" style="width: 20px;"></div><div class="col-lg-1" align="left" style="width: 300px;">@K.Key.descriptionKey</div></td>
+                                        }
+                                        else
+                                        {
+                                            <td height="50"> @K.Key.descriptionKey</td>
+                                        }
+
+                                        <td height="50"> @K.Key.goal</td>
+                                        <td height="50"> @K.employees.TitleTH@K.employees.FirstNameTH &nbsp;@K.employees.LastNameTH </td>
+
+                                        <td height="50" width="50" align="center"> <input type="text" style="width:70px" disabled value="@K.Key.weight" /></td>
+
+                                        @if (K.Key.addSubCheck == null)
+                                        {
+                                            <td height="50"></td>
+                                        }
+                                        else
+                                        {
+                                            <td> <a href="@Url.Action("JAForManagerCommentView","JobAssignment", new { id = K.Key.id, jaId = jat.id, type = 'K' })" ><img src="@Url.Content("~/images/comment.png")" style="width:35px"/></a></td>
+                                        }
+                                    </tr>
+                                }
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="center" class="auto-style1">
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>5) หน้าที่รอง/กิจกรรมรอง   </b> (Secondary Activities)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right" class="auto-style1">
+                            <label> <b>น้ำหนัก&nbsp;@jat.secondaryActivitiesWeight&nbsp;%</b></label>&nbsp;
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" width="100%" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th width="300" align="center">รายละเอียด</th>
+                                        <th width="300" align="center">เป้าหมาย</th>
+                                        <th width="200" align="center">ผู้ร่วมงาน</th>
+                                        <th width="100" align="center">น้ำหนัก</th>
+                                        <th width="50" align="center"></th>
+                                    </tr>
+                                </thead>
+                                @foreach (JoinSec S in ViewBag.listSecondKey)
+                                {
+                                    <tr>
+                                        <td height="50"> @S.Sec.descriptionSecondary</td>
+                                        <td height="50"> @S.Sec.goal</td>
+                                        <td height="50"> @S.employees.TitleTH@S.employees.FirstNameTH &nbsp;@S.employees.LastNameTH </td>
+                                        <td height="50" width="100" align="center"> <input type="text" style="width:70px" disabled value="@S.Sec.weight" /></td>
+                                            <td> <a href="@Url.Action("JAForManagerCommentView","JobAssignment", new { id = S.Sec.id, jaId = jat.id, type = 'S' })" ><img src="@Url.Content("~/images/comment.png")" style="width:35px"/></a></td>
+                                    </tr>
+                                }
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="6" align="center" class="auto-style1">
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>6) หน้าที่อื่น/กิจกรรมอื่น     </b> (Other Activities)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right" class="auto-style1">
+                            <label> <b>น้ำหนัก&nbsp;@jat.otherActivitiesWeight&nbsp;%</b></label>&nbsp;
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" width="100%" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th width="300" align="center">รายละเอียด</th>
+                                        <th width="300" align="center">เป้าหมาย</th>
+                                        <th width="200" align="center">ผู้ร่วมงาน</th>
+                                        <th width="100" align="center">
+                                            น้ำหนัก %
+                                        </th>
+                                        <th width="50" align="center"></th>
+                                    </tr>
+                                </thead>
+                                @foreach (JoinOther O in ViewBag.listOtherKey)
+                                {
+                                    <tr>
+                                        <td height="50"> @O.Other.descriptionOther</td>
+                                        <td height="50"> @O.Other.goal</td>
+                                        <td height="50"> @O.employees.TitleTH@O.employees.FirstNameTH &nbsp;@O.employees.LastNameTH </td>
+                                        <td height="50" width="100" align="center"> <input type="text" style="width:70px" disabled value="@O.Other.weight" /></td>
+                                        <td> <a href="@Url.Action("JAForManagerCommentView","JobAssignment", new { id = O.Other.id, jaId = jat.id, type = 'O' })" ><img src="@Url.Content("~/images/comment.png")" style="width:35px"/></a></td>
+                                    </tr>
+                                }
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="6" align="center" class="auto-style1">
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>4) หน้าที่อื่นๆ พิเศษ    </b> (Extra Activities)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="right" class="auto-style1">
+                            <label> <b>น้ำหนัก&nbsp;@jat.extraWeight&nbsp;%</b></label>&nbsp;
+                            <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" width="100%" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th width="300" align="center">รายละเอียด</th>
+                                        <th width="300" align="center">เป้าหมาย</th>
+                                        <th width="200" align="center">ผู้ร่วมงาน</th>
+                                        <th width="100" align="center">
+                                            น้ำหนัก %
+                                        </th>
+                                        <th width="50" align="center"></th>
+                                    </tr>
+                                </thead>
+
+                                @foreach (JoinExtra E in ViewBag.listExtraKey)
+                                {
+                                    <tr>
+                                        <td height="50"> @E.Extra.descriptionExtra</td>
+                                        <td height="50"> @E.Extra.goal</td>
+                                        <td height="50"> @E.employees.TitleTH@E.employees.FirstNameTH &nbsp;@E.employees.LastNameTH </td>
+                                        <td height="50" width="100" align="left"> <input type="text" style="width:70px" disabled value="@E.Extra.weight" /></td>
+                                        <td> <a href="@Url.Action("JAForManagerCommentView","JobAssignment", new { id = E.Extra.id, jaId = jat.id, type = 'E' })" ><img src="@Url.Content("~/images/comment.png")" style="width:35px"/></a></td>
+                                    </tr>
+                                }
+
+                            </table>
+                            <br /><br /><br /><br />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+
+                                <tr>
+                                    <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ผู้ปฏิบัติงาน</b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="100" bgcolor="#FFFFFF">
+                                        <br /><br />
+                                        <p align="center">................................................................</p>
+                                        <p align="center">
+                                            (&nbsp;&nbsp; <b>@jat.fullname</b> &nbsp;&nbsp;)
+                                        </p>
+                                        <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; @jat.empPosition</b> </p>
+                                        <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    @*<tr>
+                            <td>
+                                <table border="0" align="center" class="styled-table">
+
+                                    <tr>
+                                        <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                            <b>ผู้บังคับบัญชาระดับผู้จัดการ/หัวหน้าส่วน</b>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="100" bgcolor="#FFFFFF">
+                                            <br /><br />
+                                            <p align="center">................................................................</p>
+                                            <p align="center">
+                                                (&nbsp;&nbsp; <b>@ViewBag._managerNameLV2</b> &nbsp;&nbsp;)
+                                            </p>
+                                            <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; @ViewBag._managerLV2Position</b> </p>
+                                            <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <br />
+                            </td>
+                        </tr>*@
+
+                        <tr>
+                            <td>
+                                <table border="0" align="center" class="styled-table">
+
+                                    <tr>
+                                        <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                            <b>ผู้บังคับบัญชาระดับต้น</b>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="100" bgcolor="#FFFFFF">
+                                            <br /><br />
+                                            <p align="center">................................................................</p>
+                                            <p align="center">
+                                                (&nbsp;&nbsp; <b>@ViewBag._managerNameLV2</b> &nbsp;&nbsp;)
+                                            </p>
+                                            <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; @ViewBag._managerLV2Position</b> </p>
+                                            <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+
+                    @if (Session["Checklv1"].ToString() == "1")
+                    {
+                        <tr>
+                            <td>
+                                <table border="0" align="center" class="styled-table">
+
+                                    <tr>
+                                        <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                            <b>ผู้บังคับบัญชาระดับสูง</b>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td height="100" bgcolor="#FFFFFF">
+                                            <br /><br />
+                                            <p align="center">................................................................</p>
+                                            <p align="center">
+                                                (&nbsp;&nbsp; <b> @ViewBag._managerNameLV1</b> &nbsp;&nbsp;)
+                                            </p>
+                                            <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; @ViewBag._managerLV1Position</b> </p>
+                                            <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <br />
+                            </td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+
+                                <tr>
+                                    <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ผู้อำนวยการ</b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="100" bgcolor="#FFFFFF">
+                                        <br /><br />
+                                        <p align="center">................................................................</p>
+                                        <p align="center">
+                                            (&nbsp;&nbsp; <b>รศ.ดร. สาโรช รุจิรวรรธน์</b> &nbsp;&nbsp;)
+                                        </p>
+                                        <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; ผู้อำนวยการ</b> </p>
+                                        <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    @*<tr>   **Comment หัวหน้าตามสายงาน Hide ไว้ก่อน Ver2 รอสรุป
+                            <td>
+                                <table border="0" align="center" class="styled-table">
+
+
+                                    <tr>
+                                        <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                            <b>ผู้บังคับบัญชาระดับผู้หัวหน้าฝ่าย</b>
+                                        </td>
+                                    </tr>
+                                    @foreach (JaManager K in ViewBag.DirectorSection)
+                                    {
+
+                                        <tr>
+                                            <td height="100" bgcolor="#FFFFFF">
+                                                <br /><br />
+                                                <p align="center">................................................................</p>
+                                                <p align="center">
+                                                    (&nbsp;&nbsp; <b>@K.employees.TitleTH@K.employees.FirstNameTH &nbsp; @K.employees.LastNameTH </b> &nbsp;&nbsp;)
+                                                </p>
+                                                <p align="center"><b>ตำแหน่ง &nbsp;&nbsp; @K.employees.Position</b> </p>
+                                                <p align="center">&nbsp;&nbsp;<b> @DateTime.Now.ToString("dd/MM/yyyy")</b></p><br /><br />
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                                <br />
+                            </td>
+                        </tr>*@
+
+                    @if (Session["EmpType"] != null)
+                    {
+                        if (jat.jaStatus == "Waiting")
+                        {
+                            <tr>
+                                <td>
+                                    @using (Html.BeginForm("ConsiderJAForManager", "JobAssignment", new { id = jat.id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <table border="0" align="center" class="styled-table">
+
+
+                                            <tr>
+                                                <td width="1000" class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                                    <b>พิจารณา Job Agreement</b>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td height="100" bgcolor="#FFFFFF" align="center">
+                                                    <div>
+                                                        <label class="radio">
+                                                            @Html.RadioButton("consider", "yes", new { onchange = "showhide()" }) <span>อนุมัติ</span>
+                                                        </label>
+                                                        <label class="radio">
+                                                            @Html.RadioButton("consider", "no", new { @checked = true, onchange = "showhide()" }) <span> แก้ไข </span>
+                                                        </label>
+
+                                                        <div id="divEdit">
+                                                            <label class="radio">
+                                                                หมายเหตุ: &nbsp;&nbsp;
+                                                                <span>
+                                                                    <textarea id="taEdit" name="taEdit" style="width: 250px; "></textarea>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="30" bgcolor="#FFFFFF" align="center">
+                                                    <div>
+                                                        <button type="submit" class="btn btn-success" style="background-color:#80c904">Submit</button>&nbsp;&nbsp;
+                                                        <button type="reset" class="btn btn-danger">Cancel</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    }
+                                    <br />
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+                    <tr>
+                        <td height="50" align="center">
+                            @*<a class="btn btn-success" href="@Url.Action("exportReport")">Download Report</a>*@  @*Hide*@
+                            @*@Html.ActionLink("Save PDF", "exportReport", "JobAssignment", new { @class = "btn btn-primary" })*@
+                        </td>
+                    </tr>
+                </table>
+    </table>
+</div>
+
+
+
+

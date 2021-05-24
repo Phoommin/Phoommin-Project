@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SynchrotronHR.Models.View_ManagerViewJADetail >
+@using PagedList.Mvc;
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+
+    ViewBag.Title = "Job Description";
+}
+<head>
+    <meta charset="utf-8" />
+    <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+</head>
+
+<table align="center" width="100%" border="0">
+
+    <tr>
+        <td colspan="6" align="center" class="auto-style1"><img style="width: 200px; height: 120px;" src="~/Images/syn_logo.png" /></td>
+    </tr>
+
+    <tr>
+        <td colspan="6" align="center" class="auto-style1"><h4>แบบการกำหนดหน้าที่งาน (Job Description)<br />สถาบันวิจัยแสงซินโครตรอน (องค์การมหาชน)<br /><br /></h4></td>
+    </tr>
+
+    <tr>
+        <td colspan="6" align="left" class="auto-style1">
+            <b>แบบการกำหนดหน้าที่งาน (Job Description)</b> <br /><br />
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="6" align="left" class="auto-style1">
+            @using (Html.BeginForm("JaHeadSearch", "JobAssignment", FormMethod.Get))
+            {
+                <p>
+                    Find by name: @Html.TextBox("SearchStringName", ViewBag.CurrentFilter as string) &nbsp;&nbsp;
+                    year: @Html.TextBox("SearchStringYear", ViewBag.CurrentFilter as string) &nbsp;&nbsp;
+                    status:  <select name="SearchStringStatus" id="SearchStringStatus">
+                        <option value="selected" selected>----------</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Waiting">Waiting</option>
+                        <option value="Approved">Approved</option>
+
+                    </select> &nbsp;&nbsp;
+                    <input type="submit" value="Search" class="btn btn-primary" style="border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" />
+                </p>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <table border="0" width="100%" class="styled-table">
+                <thead>
+                    <tr>
+                        @*<th>
+                                @Html.ActionLink("jaID", "JaAdminSearch", new { sortOrder = ViewBag.jaIDSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                            </th>*@
+                        <th>
+                            @Html.ActionLink("Year", "JaAdminSearch", new { sortOrder = ViewBag.jaYearSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Name", "JaAdminSearch", new { sortOrder = ViewBag.fullNameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                        </th>
+                        <th>
+                            @Html.ActionLink("Status", "JaAdminSearch", new { sortOrder = ViewBag.StatusSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                        </th>
+
+                        <th></th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.jaMaster.id)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.jaYear)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.jaStatus)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Detail", "JAForManager", "JobAssignment", new { jdId = item.jdId, EmpID = item.empId }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <br />
+            @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))*@
+        </td>
+    </tr>
+</table>
+
+
+
+
+

@@ -1,0 +1,452 @@
+﻿@model IEnumerable<SynchrotronHR.Models.ViewModel>
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+
+    ViewBag.Title = "Job Description";
+    var jdt = (ViewModel)ViewData["jdDetails"];
+
+}
+    <head>
+        <meta charset="utf-8" />
+        <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+    </head>
+<div align="center">
+    <table align="center" width="100%" border="0">
+
+        <tr>
+            <td colspan="6" align="center" class="auto-style1"><img style="width: 200px; height: 120px;" src="~/Images/syn_logo.png" /></td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center" class="auto-style1"><h4>แบบการกำหนดหน้าที่งาน (Job Description)<br />สถาบันวิจัยแสงซินโครตรอน (องค์การมหาชน)<br /><br /></h4></td>
+        </tr>
+
+        <tr>
+            <td colspan="6">
+                <table border="0" align="center" width="100%">
+
+                    @if (Session["jaBtnCheck"].ToString() == "1" && Session["jaStatusCheck"].ToString() == "W")
+                    {
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1">
+                                @Html.ActionLink("JA Detail", "JA", "JobAssignment", new { jdId = jdt.jdMaster.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" align="right" class="auto-style1">
+                                @Html.ActionLink("Create JA", "CreateJA", "JobAssignment", new { id = jdt.jdMaster.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                            </td>
+                        </tr>
+                    }
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>1) รายละเอียดของตำแหน่ง </b> (Position) <br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <table border="0" align="center" class="styled-table-1">
+
+                                <tr>
+                                    <td  align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อ-นามสกุล</td>
+                                    <td  colspan="3">&nbsp;&nbsp; @jdt.employees.TitleTH@jdt.employees.FirstNameTH &nbsp;&nbsp; @jdt.employees.LastNameTH &nbsp;&nbsp;</td>
+                                </tr>
+
+                                <tr>
+                                    <td  align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อตำแหน่ง</td>
+                                    <td colspan="3">&nbsp;&nbsp; @jdt.employees.Position</td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <td  align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อส่วนงาน</td>
+                                    <td  colspan="3">&nbsp;&nbsp; @jdt.employees.Sector</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td  align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อฝ่าย</td>
+                                    <td >&nbsp;&nbsp; @jdt.employees.Department</td>
+                     
+                                </tr>
+
+                            </table>
+                            <br />
+                        </th>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>2) วัตถุประสงค์  </b> (Job Purpose) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <label id="taPurpose" name="taPurpose" style="width: 100%; max-width: 100%;" readonly>@jdt.jdMaster.jdPurpose</label><br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>3) หน้าที่หลัก/กิจกรรมหลัก   </b> (Key Responsibilities and Activities) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th align="center">หน้าที่หลัก/กิจกรรมหลัก (Key Responsibilities and Activities)</th>
+                                        <th  width="10%" align="center">น้ำหนัก %</th>
+                                    </tr>
+                                </thead>
+                                @foreach (JDMasterSub K in ViewBag.KeySub)
+                                {
+                                    <tr>
+                                        <td height="50" width="600">&nbsp;&nbsp; @K.descriptionSub</td>
+                                        <td height="50" width="100" align="center">@K.weight</td>
+                                    </tr>
+                                }
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th  align="center">หน้าที่รอง/กิจกรรมรอง (Secondary Activities)</th>
+                                        <th width="10%" align="center">น้ำหนัก %</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td height="50"></td>
+                                    <td height="50"></td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th  align="center">หน้าที่อื่น/กิจกรรมอื่น  (Other Activities)</th>
+                                        <th width="10%" align="center">น้ำหนัก %</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td height="50"></td>
+                                    <td height="50"></td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left" class="auto-style1">
+                            <b>4) สายการบังคับบัญชา  </b> (Superior/Subordinate) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <table border="0" align="center" class="styled-table-1">
+
+                                <tr>
+                                    <td width="25%" align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>
+                                            ชื่อตำแหน่งผู้บังคับบัญชาโดยตรง <br />
+                                            (Position of direct superior)
+                                        </b>
+                                    </td>
+                                    <td  align="center" colspan="2">
+                                        &nbsp;&nbsp; @jdt.jdMaster.positionOfDirectSuperior
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td  align="center" height="50" bgcolor="#357496" style="color:#ffffff">
+                                        <b>
+                                            ชื่อตำแหน่งผู้ใต้บังคับบัญชาโดยตรง <br />
+                                            (Position of direct subordinate)
+                                        </b>
+                                    </td>
+                                    <td  align="center" colspan="2">
+                                        &nbsp;&nbsp; @jdt.jdMaster.positionOfDirectSubordinate
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td  align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>
+                                            จำนวนผู้ใต้บังคับบัญชาโดยตรง <br />
+                                            (Amount of direct subordinate)
+                                        </b>
+                                    </td>
+                                    <td width="25%" align="center">
+                                        &nbsp;&nbsp; @jdt.jdMaster.amountOfDirectSubordinate
+                                    </td>
+                                    <td  align="center" bgcolor="#256080" style="color:#ffffff">
+                                        <b> จำนวนผู้ใต้บังคับบัญชารวมทั้งหมด &nbsp;&nbsp;@jdt.jdMaster.amountSubordinate &nbsp;&nbsp; คน <br />(Amount subordinate)</b>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <b>5) ผู้เกี่ยวข้องโดยตรงกับตำแหน่งงานนี้    </b> (Working Relation) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <table border="0" align="center" class="styled-table-1">
+
+                                <tr>
+                                    <td width="25%" align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>
+                                            ภายในหน่วยงาน <br />(Inside Department)
+                                        </b>
+                                    </td>
+                                    <td align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.insideDepartment
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" height="50" bgcolor="#357496" style="color:#ffffff">
+                                        <b>
+                                            ภายนอกหน่วยงาน (ภายในสถาบัน)<br />
+                                            (Outside Department)
+                                        </b>
+                                    </td>
+                                    <td  align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.outsideDepartment
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td  align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>
+                                            ภายนอกสถาบัน (Outside SLRI)
+                                        </b>
+                                    </td>
+                                    <td  align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.outsideSLRI
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <b>6) คุณสมบัติของผู้ดำรงตำแหน่ง   </b> (Specification)  <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <table border="0" align="center" class="styled-table-1">
+
+                                <tr>
+                                    <td width="25%" align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>การศึกษา / Education Background</b>
+                                    </td>
+                                    <td  align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.EduBackground
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td  align="center" height="50" bgcolor="#357496" style="color:#ffffff">
+                                        <b> สาขา / Major</b>
+                                    </td>
+                                    <td align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.major
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td align="center" height="50" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ประสบการณ์ / Professional Experience</b>
+
+                                    </td>
+                                    <td align="center">
+                                        &nbsp;&nbsp;@jdt.jdMaster.proExp
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <b>7) ความสามารถที่จำเป็นในตำแหน่งงาน   </b> (Job Competencies) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th  align="center" height="50">
+                                            ความรู้ <br />
+                                            (Knowledge)
+                                        </th>
+                                        <th align="center" height="50">
+                                            ทักษะ <br />
+                                            (Skill)
+                                        </th>
+                                        <th align="center" height="50">ความสามารถด้านการคิด/บุคลิกภาพ <br />(Mental Abilities/Personalities)</th>
+                                    </tr>
+                                </thead>
+
+                                <tr>
+                                    <td height="50" width="200"> @jdt.jdMaster.competenciesKnowledge</td>
+                                    <td height="50" width="200"> @jdt.jdMaster.competenciesSkill</td>
+                                    <td height="50" width="300"> @jdt.jdMaster.competenciesAbilities</td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <b>8) คุณสมบัติอื่นๆ </b> (Other) <br /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="6" align="left">
+                            <label id="taOther" name="taOther" style="width: 100%; max-width: 100%; height:100px" readonly>@jdt.jdMaster.other</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+
+                                <tr>
+                                    <td class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ผู้ปฏิบัติงาน</b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="100" bgcolor="#FFFFFF">
+                                        <br /><br />
+                                        <p align="center">................................................................</p>
+                                        <p align="center">
+                                            (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                                        </p>
+                                        <p align="center">ตำแหน่ง.....................................................</p>
+                                        <p align="center">............/........../...........</p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+
+                                <tr>
+                                    <td class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ผู้บังคับบัญชาระดับผู้จัดการ/หัวหน้าส่วน</b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="100" bgcolor="#ffffff">
+                                        <br /><br />
+                                        <p align="center">................................................................</p>
+                                        <p align="center">
+                                            (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                                        </p>
+                                        <p align="center">ตำแหน่ง.....................................................</p>
+                                        <p align="center">............/........../...........</p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <table border="0" align="center" class="styled-table">
+
+                                <tr>
+                                    <td class="auto-style1" align="center" height="35" bgcolor="#256080" style="color:#ffffff">
+                                        <b>ผู้บังคับบัญชาระดับผู้หัวหน้าฝ่าย</b>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td height="100" bgcolor="#ffffff">
+                                        <br /><br />
+                                        <p align="center">................................................................</p>
+                                        <p align="center">
+                                            (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                                        </p>
+                                        <p align="center">ตำแหน่ง.....................................................</p>
+                                        <p align="center">............/........../...........</p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <br />
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+

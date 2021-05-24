@@ -1,0 +1,168 @@
+﻿@model PagedList.IPagedList<SynchrotronHR.Models.ViewModel>
+@using PagedList.Mvc;
+@using SynchrotronHR.Models;
+@using SynchrotronHR.Controllers;
+@{
+
+    ViewBag.Title = "Job Description";
+    var jdt = ViewBag.jaSearchDetails;                     //(JdSearch)ViewData["jdSearchDetails"];
+}
+<head>
+    <meta charset="utf-8" />
+    <link href="@Url.Content("~/Content/StyleSheet1.css")" rel="stylesheet" type="text/css" />
+</head>
+
+
+<table align="center" width="100%" border="0">
+
+    <tr>
+        <td colspan="6" align="center" class="auto-style1"><img style="width: 200px; height: 120px;" src="~/Images/syn_logo.png" /></td>
+    </tr>
+
+    <tr>
+        <td colspan="6" align="center" class="auto-style1"><h4>แบบการกำหนดหน้าที่งาน (Job Description)<br />สถาบันวิจัยแสงซินโครตรอน (องค์การมหาชน)<br /><br /></h4></td>
+    </tr>
+
+    <tr>
+        <td colspan="6">
+            <table border="0" align="center" width="100%">
+
+                <tr>
+                    <td colspan="6" align="left" class="auto-style1">
+                        <b>1) รายละเอียดของตำแหน่ง </b> (Position) <br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <table align="center" class="styled-table-1">
+
+                            <tr>
+                                <th align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อ-นามสกุล</th>
+                                <td colspan="3">&nbsp;&nbsp; @jdt.employees.TitleTH@jdt.employees.FirstNameTH &nbsp;&nbsp; @jdt.employees.LastNameTH &nbsp;&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อตำแหน่ง</td>
+                                <td colspan="3">&nbsp;&nbsp; @jdt.employees.Position</td>
+                            </tr>
+
+                            <tr>
+                                <td align="left" height="35" bgcolor="#256080" style="color:#ffffff">&nbsp;&nbsp;ชื่อส่วนงาน</td>
+                                <td colspan="3">&nbsp;&nbsp; @jdt.employees.Sector</td>
+                            </tr>
+
+                            <tr>
+                                <td width="25%" align="left" height="35" bgcolor="#357496" style="color:#ffffff">&nbsp;&nbsp;ชื่อฝ่าย</td>
+                                <td class="auto-style1">&nbsp;&nbsp; @jdt.employees.Department</td>
+                            </tr>
+
+                        </table>
+                        <br />
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="6" align="left" class="auto-style1">
+                        <b>แบบการกำหนดหน้าที่งาน (Job Description)</b> <br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @using (Html.BeginForm("JaSearch", "JobAssignment", FormMethod.Get))
+                        {
+                            <p>
+                                Find by year: <select name="SearchStringYear" id="SearchStringYear">
+                                    <option value="selected" selected>----------</option>
+                                    <option value="2563">2563</option>
+                                    <option value="2564">2564</option>
+                                </select>&nbsp;&nbsp;
+                                status:  <select name="SearchStringStatus" id="SearchStringStatus">
+                                    <option value="selected" selected>----------</option>
+                                    <option value="Draft">Draft</option>
+                                    <option value="Waiting">Waiting</option>
+                                    <option value="Approved">Approved</option>
+                                </select> &nbsp;&nbsp;
+                                <input type="submit" value="Search" class="btn btn-primary" style="border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" />
+                            </p>
+                        }
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        @*<table border="0" align="center" class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th height="35" align="center">ปี</th>
+                                        <th height="35" align="center">รายละเอียด</th>
+                                        <th height="35" align="center">สถานะ</th>
+                                        <th height="35" width="5%" align="center"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (ViewModel K in ViewBag.jaSearchDetailsList)
+                                    {
+                                        <tr>
+                                            <td height="50">&nbsp;&nbsp; @K.jaMaster.jaYear</td>
+                                            <td height="50">&nbsp;&nbsp; @K.jdMaster.jdPosition</td>
+                                            <td height="50">&nbsp;&nbsp; @K.jaMaster.jaStatus</td>
+                                            <td height="50" align="center">
+                                                @Html.ActionLink("Detail", "JA", "JobAssignment", new { jdId = K.jdMaster.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                                            </td>
+                                        </tr>
+                                    }
+                            </table>*@
+
+                        <table border="0" width="70%" class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.ActionLink("ปี", "JaSearch", new { sortOrder = ViewBag.jaYearSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("รายละเอียด", "JaSearch", new { sortOrder = ViewBag.fullNameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                                    </th>
+                                    <th>
+                                        @Html.ActionLink("สถานะ", "JaSearch", new { sortOrder = ViewBag.StatusSortParm, currentFilter = ViewBag.CurrentFilter }, new { @style = "color: white" })
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.jaMaster.jaYear)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.jdMaster.jdPosition)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.jaMaster.jaStatus)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Detail", "JA", "JobAssignment", new { jdId = item.jdMaster.id }, new { enctype = "multipart/form-data", @class = "btn btn-warning", @style = "border-radius: 20px 20px 20px 20px; box-shadow: 5px 5px 20px #00000029;" })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                        <br />
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index",
+                            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+                    </td>
+                </tr>
+            </table>
+
+
+            <br />
+        </td>
+    </tr>
+
+</table>
+
+
+
