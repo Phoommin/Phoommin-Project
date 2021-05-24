@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+.header {
+  padding: 0px;
+  text-align: left;
+  background: #7EC9C5;
+  color: #707070;
+  font-size: 30px;
+}
+.UserDetell{
+	color: #FFFFFF;
+}
+.ans{
+	color: #707070;
+	margin-top: 15px;
+}
+.btn span.ansicon {
+    background: url(https://image.flaticon.com/icons/svg/2089/2089310.svg) no-repeat;
+    float: left;
+    width: 10px;
+    height: 20px;
+}
+.anscontainer {
+text-align: left;
+font: Regular 30px/40px Segoe UI;
+letter-spacing: 0;
+color: #707070;
+  padding: 10px;
+  margin-top: 0px;
+  background: #ececec;
+  font-size: 20px;
+  
+}

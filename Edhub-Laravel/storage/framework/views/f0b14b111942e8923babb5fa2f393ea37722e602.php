@@ -1,0 +1,1 @@
+<a href="<?php echo e(url('post',1)); ?>" style="text-decoration: none;">แก้ไข</a><?php /**PATH C:\xampp\htdocs\Edhub\resources\views/test.blade.php ENDPATH**/ ?>
