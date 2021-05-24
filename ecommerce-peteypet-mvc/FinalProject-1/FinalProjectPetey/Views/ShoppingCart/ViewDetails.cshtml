@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using FinalProjectPetey.Models;
+@using FinalProjectPetey.Controllers;
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Webkuy</title>
+    @Styles.Render("~/Content/bootstrap-Minty.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <br /><br /><br />
+    @{
+        var pe = (Pet)ViewData["AniDetails"];
+        //var pe2 = (Product)ViewData["AniDetails"];
+        //var pe3 = (Trainer)ViewData["AniDetails"];
+    }
+
+    <div class="row">
+        <div class="col">
+            <img style="height: 300px; width: 100%; display: block;" src="~/Content/images/@pe.Images" class="card-img-top" alt="...">
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h5 class="card-title">@pe.Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@pe.Gene</h6>
+                <h6 class="card-subtitle mb-2 text-muted">@pe.Birthdate</h6>
+                <h6 class="card-subtitle mb-2 text-muted">@pe.Price</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                @Html.ActionLink("+ใส่ตระกร้า", "AddtoCart", "ShoppingCart", new { id = pe.Pet_Id }, new { @class = "btn btn-info " })
+                @Html.ActionLink("สั่งซื้อ", "Buy", "ShoppingCart", new { id = pe.Pet_Id }, new { @class = "btn btn-info " })
+            </div>
+        </div>
+        <div class="col">
+            <div class="card-body">
+                <h5 class="card-title">ข้อมูล : @pe.Gene</h5>
+                <p class="card-text">@pe.History</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <table>
+                <tr>
+                    <td> <img style="height: 100px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image"></td>
+                    <td> <img style="height: 100px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image"></td>
+                </tr>
+                <tr>
+                    <td><img style="height: 100px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image"></td>
+                    <td><img style="height: 100px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">+ พูดคุย</a>
+                    <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">จำนวนครั้งที่ซื้อ/ขาย</a>
+                    <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+                    <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+                </div>
+            </div>
+        </div>
+@using (Html.BeginForm("#", "#", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">ความคิดเห็นเกี่ยวกับสินค้านี้ :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+                <div class="form-group">
+                    <label for="exampleTextarea">ความคิดเห็นเกี่ยวกับสินค้านี้</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">ยืนยัน</a>
+                    <a href="#" class="btn btn-secondary btn-lg disabled" tabindex="-1" role="button" aria-disabled="true">ยกเลิก</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    @Styles.Render("~/Content/style.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<div class="row navbar-dark bg-warning ">
+    <img src="~/Content/images/indexWide1.jpg" class="img-fluid" alt="Responsive image" max-width 100%; height auto;>
+</div>
+<div class="row navbar-dark bg-warning ">
+    <div class="col-md-4 ">
+        <form class="form-inline my-5 my-lg-0">
+            <br /><br /><br />
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            <button class="btn btn-light my-5 my-sm-0" type="submit" style="width:150px;height:68px">
+            <img src=@Url.Content("~/Content/images/icons8-shiba-inu-50.png") width="35" height="35" align="absmiddle" />
+            @Html.ActionLink("สัตว์เลี้ยง", "Pet", "Sell", null, new { @class =  "style = 'width:150px; height:68px'" })
+            </button>
+        </form>
+
+    </div>
+    <div class="col-md-4">
+        <form class="form-inline my-5 my-lg-0">
+            <br /><br /><br />
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            <button class="btn btn-light my-5 my-sm-0" type="submit" style="width:150px;height:68px">
+                <img src=@Url.Content("~/Content/images/icons8-pet-bowl-64.png") width="35" height="35" align="absmiddle" />
+                @Html.ActionLink("อุปกรณ์สัตว์เลี้ยง", "Product", "Sell", null, new { @class = "style='width:150px; height: 68px'" })
+            </button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <form class="form-inline my-5 my-lg-0">
+            <br /><br /><br />
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;
+            <button class="btn btn-light my-5 my-sm-0" type="submit" style="width:150px;height:68px">
+                <img src=@Url.Content("~/Content/images/icons8-dog-training-50.png") width="35" height="35" align="absmiddle" />
+                @Html.ActionLink("เทรนเนอร์", "Trainer", "Sell", null, new { @class = "style='width:150px; height: 68px'" })
+            </button>
+        </form>
+    </div>
+</div>
+<div class="row">
+
+    <h2>  <br /> ยอดนิยม</h2></p>
+</div>
+<section id="team" class="wow fadeInUp">
+    <div class="row navbar-dark bg-light ">
+        <div class="col-lg-3 col-md-6 ">
+            <div class="member">
+                <br />
+                <div class="pic"><img class="rounded" src="~/Content/images/shiba.jpg"></div>
+                <div class="details">
+                    <h4>B6070168<br />Nitirat Khudpab </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="member">
+                <br />
+                <div class="pic"><img class="rounded" src="~/Content/images/shiba.jpg"></div>
+                <div class="details">
+                    <h4>B6070168<br />Nitirat Khudpab </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="member">
+                <br />
+                <div class="pic"><img class="rounded" src="~/Content/images/shiba.jpg"></div>
+                <div class="details">
+                    <h4>B6070168<br />Nitirat Khudpab </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="member">
+                <br />
+                <div class="pic"><img class="rounded" src="~/Content/images/shiba.jpg"></div>
+                <div class="details">
+                    <h4>B6070168<br />Nitirat Khudpab </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+
+
+

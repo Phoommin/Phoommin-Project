@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using FinalProjectPetey.Models
+@using FinalProjectPetey.Controllers;
+
+<br /><br /><br /><br />
+<h2>รายการสั่งซื้อ</h2>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/content/Index.css">
+    @Styles.Render("~/Content/Index.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<br />
+<body>
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table" align="center">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">ชื่อสินค้า</th>
+                        <th scope="col">ราคา</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (item it in (List<item>)Session["cart"])
+                    {
+                        <tr class="table-warning">
+                            <th scope="row"><input type="checkbox" name="1" value="1"></th>
+                            <td> @it.Pet.Name </td>
+                            <td> @it.Pet.Price  </td>
+                            <td> <button align="center" type="button" class="btn btn-danger">ลบทิ้ง</button>   </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <br />
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card text-white bg-warning mb-3" style="width:450px">
+                <div class="card-body">
+                    <table>
+                        <button type="button" class="btn btn-danger btn-lg btn-block">
+                            โปรดเลือกวิธีชำระเงิน
+                        </button>
+                        <tr>
+                            <td>
+                                <br />
+                                <div class="alert alert-dismissible alert-primary" style="width:200px; height:70px;" text-align="rigth">
+                                    <p>ชำระเงิน</p>
+                                </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div class="alert alert-dismissible alert-success" style="width:200px; height:70px;" text-align="rigth">
+                                    <p>ชำระผ่านบัตรเครดิต/เดบิต</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <button type="button" class="btn btn-danger btn-lg btn-block">
+                            โปรดเลือกวิธีจัดส่ง
+                        </button>
+                        <tr>
+
+                            <td>
+                                <br />
+                                <div class="alert alert-dismissible alert-success" style="width:200px; height:70px;" align="left">
+                                    <center></center> <p>นัดรับกับผู้ซื้อด้วยตนเอง</p> </center>
+                                </div>
+                            </td>
+                            <td>
+                                <br />
+                                <div class="alert alert-dismissible alert-secondary" style="width:200px; height:70px;" align="left">
+                                    <p>บริการจัดส่งจากทางบริษัท</p>
+                                </div>
+                            </td>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @{
+        var pe = (Pet)ViewData["AniDetails"];
+    }
+
+    <div class="row">
+        <div class="col-md-8">
+            <table>
+                <tr>
+                    <td class="table-dark>
+                        sdfghjk
+                    </td>
+                    <td class="table-dark >
+                        dfgjkl
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <div align="center">
+                <div class="card text-white bg-warning mb-3" style="width:450px">
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h5 class="card-title" align="left">ยอดรวม (จำนวน ชิ้น)</h5>
+                                </td>
+                                <td>
+                                    <h5 class="card-title" align="right">฿XXXX</h5>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <h5 class="card-title" align="left">ยอดรวมทั้งหมด</h5>
+                                </td>
+                                <td>
+                                    <br /><br />
+                                    <h5 class="card-title" align="right">฿XXXX</h5>
+                                    <p align="right"> รวมภาษีมูลค่าเพิ่ม(ถ้ามี)</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        @Html.ActionLink("ดำเนินการชำระเงิน", "InputDetailsBuy", "ShoppingCart", new { id = pe.Pet_Id }, new { @class = "btn btn-danger btn-lg btn-block" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+
+
+
+

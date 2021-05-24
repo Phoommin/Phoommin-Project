@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Mintyb.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body style="background-color:#FFE57E;" align="center">
+    <br /><br /><br />
+
+    <div>
+        <center>
+            <div class="alert alert-dismissible alert-light" style="height: 400px; width: 670px;">
+                <center>
+                    <br /><br /><br /><br /><br />
+                    &nbsp;&nbsp;&nbsp;
+                    <div class="col-6">
+                        <select id="inputState" class="form-control">
+                            <option selected>ผู้ใช้งานทั่วไป</option>
+                            <option>ผู้ใช้งานทั่วไป</option>
+                            <option>ร้านค้า</option>
+                        </select>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="col-6">
+                        <select id="inputState" class="form-control">
+                            <option selected>ร้านค้า</option>
+                            <option>ผู้ใช้งานทั่วไป</option>
+                            <option>ร้านค้า</option>
+                        </select>
+                    </div>
+
+                </center>
+
+            </div>
+
+        </center>
+        <br /><br /><br /><br /><br />
+    </div>
+</body>
+</html>
